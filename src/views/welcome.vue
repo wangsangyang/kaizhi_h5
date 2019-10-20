@@ -13,22 +13,24 @@
     </section>
 
     <section class="section-person">
-        <div class="nan">
-            <img class="dialog" src="../assets/images/dialog-1.png">
-            <img class="ren" src="../assets/images/nan1.png">
-            <img class="tou" src="../assets/images/nan-tou-1.png">
-            <i class="yan yan1"></i>
-            <i class="yan yan2"></i>
-            <img class="shou" src="../assets/images/nan-shou-1.png">
-            <img class="gebo" src="../assets/images/nan-gebo-1.png">
-        </div>
-        <div class="nv">
-            <img class="dialog" src="../assets/images/dialog-2.png">
-            <img class="ren" src="../assets/images/nv1.png">
-            <img class="tou" src="../assets/images/nv-tou-1.png">
-            <i class="yan yan1"></i>
-            <i class="yan yan2"></i>
-            <img class="gebo" src="../assets/images/nv-gebo-1.png">
+        <img class="dialog dialog1" src="../assets/images/dialog-1.png">
+        <img class="dialog dialog2" src="../assets/images/dialog-2.png">
+        <div class="inner">
+            <div class="nan">
+                <img class="ren" src="../assets/images/nan1.png">
+                <img class="tou" src="../assets/images/nan-tou-1.png">
+                <i class="yan yan1"></i>
+                <i class="yan yan2"></i>
+                <img class="shou" src="../assets/images/nan-shou-1.png">
+                <img class="gebo" src="../assets/images/nan-gebo-1.png">
+            </div>
+            <div class="nv">
+                <img class="ren" src="../assets/images/nv1.png">
+                <img class="tou" src="../assets/images/nv-tou-1.png">
+                <i class="yan yan1"></i>
+                <i class="yan yan2"></i>
+                <img class="gebo" src="../assets/images/nv-gebo-1.png">
+            </div>
         </div>
     </section>
 
@@ -45,6 +47,7 @@
     width: 88px;
     height: 88px;
     position: absolute;
+    z-index: 99;
     top: 285px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -56,8 +59,8 @@
         top: 50%;
         margin: -30px 0 0 -30px;
         border-radius: 50%;
-        background-color: rgba(148, 75, 171, .4);
-        box-shadow: 0 0 12px rgba(148, 75, 171, 0.9);
+        background-color: rgba(148, 75, 171, .6);
+        box-shadow: 0 0 8px rgba(148, 75, 171);
         animation: wave2 1.8s ease-out infinite normal;
         -webkit-animation-delay: 0.8s;
     }  
@@ -69,8 +72,8 @@
         top: 50%;
         margin: -30px 0 0 -30px;
         border-radius: 50%; 
-        background-color: rgba(244, 49, 98, .4);
-        box-shadow: 0 0 8px rgba(244, 49, 98, .9);
+        background-color: rgba(244, 49, 98, .5);
+        box-shadow: 0 0 8px rgba(244, 49, 98);
         animation: wave2 1.8s ease-out infinite normal;
     }
     .bg3{
@@ -101,28 +104,39 @@
     100%{ transform: scale(2); opacity: 0.1; }
 }
 .section-person{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     position: absolute;
     bottom: 0;
     z-index: 2;
     margin: 0 13px;
+    .inner{
+        height: 170px;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+    }
     .dialog{
         position: absolute;
+    }
+    .dialog1{
+        width: 47%;
+        left: 0;
+        top: -54px;
+        transform: scale(0);
+        animation: nan-dialog .8s ease-in-out .6s forwards;
+        animation-fill-mode: forwards;
+    }
+    .dialog2{
+        width: 50%;
+        right: 0;
+        top: -46px;
+        transform: scale(0);
+        animation: nv-dialog .8s ease-in-out 1.6s forwards;
+        animation-fill-mode: forwards;
     }
     .nan{
         width: 52%;
         position: relative;
         left: 10px;
-        .dialog{
-            width: 94%;
-            left: -14px;
-            top: -54px;
-            transform: scale(0);
-            animation: nan-dialog .8s ease-in-out .6s forwards;
-            animation-fill-mode: forwards;
-        }
         .ren{ 
             width: 100%; 
             position: relative;
@@ -174,14 +188,6 @@
         width: 36%;
         position: relative;
         right: 28px;
-        .dialog{
-            width: 140%;
-            left: -20px;
-            top: -50px;
-            transform: scale(0);
-            animation: nv-dialog .8s ease-in-out 1.6s forwards;
-            animation-fill-mode: forwards;
-        }
         .ren{ width: 100%; }
         .tou{  
             width: 55%;
@@ -229,14 +235,6 @@
         }
     }
 }
-@keyframes nan-yan{
-    15%{ height: 1px;  }
-    16%{ height: 4px; }
-}
-@keyframes nv-yan{
-    15%{ height: 1px;  }
-    16%{ height: 6px; }
-}
 @keyframes nan-dialog{
     70%{ transform: scale(1.2); }
     100%{ transform: scale(1); }
@@ -245,12 +243,28 @@
     70%{ transform: scale(1.2); }
     100%{ transform: scale(1); }
 }
+@keyframes nan-yan{
+    15%{ height: 1px;  }
+    16%{ height: 4px; }
+
+    0%{ transform: translate(0, 0); }
+    12.5%{ transform: translate(2px, 0); }
+    25%{ transform: translate(0, 0); }
+    50%{ transform: translate(-2px, 0);  }
+    62.5%{ transform: translate(0, 0); }
+    75%{ transform: translate(2px, 0); }
+    100%{ transform: translate(0, 0); }
+}
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 6px; }
+}
 @keyframes nan-tou{
     0%{ transform: skew(0) rotate(0); }
     25%{ transform: skew(-1deg) rotate(1deg); }
     50%{ transform: skew(0) rotate(0); }
     75%{ transform: skew(1deg) rotate(-1deg); }
-    100%{ transform: skew(0)  rotate(0); }
+    100%{ transform: skew(0) rotate(0); }
 }
 @keyframes nan-shou{
     0%{ transform: translate(0, 0) skew(0) rotate(0); }
@@ -272,7 +286,7 @@
     25%{ transform: skew(-1deg) rotate(1deg); }
     50%{ transform: skew(0) rotate(0); }
     75%{ transform: skew(1deg) rotate(-1deg); }
-    100%{ transform: skew(0)  rotate(0); }
+    100%{ transform: skew(0) rotate(0); }
 }
 @keyframes nv-gebo{
     0%{ transform: skew(0) translate(0, 0); }

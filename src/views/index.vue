@@ -36,8 +36,8 @@
         top: 50%;
         margin: -30px 0 0 -30px;
         border-radius: 50%;
-        background-color: rgba(148, 75, 171, .4);
-        box-shadow: 0 0 12px rgba(148, 75, 171, .8);
+        background-color: rgba(148, 75, 171, .6);
+        box-shadow: 0 0 8px rgba(148, 75, 171);
         animation: wave2 1.8s ease-out infinite normal;
         -webkit-animation-delay: 0.8s;
     }  
@@ -49,8 +49,8 @@
         top: 50%;
         margin: -30px 0 0 -30px;
         border-radius: 50%; 
-        background-color: rgba(244, 49, 98, .4);
-        box-shadow: 0 0 8px rgba(244, 49, 98, .8);
+        background-color: rgba(244, 49, 98, .5);
+        box-shadow: 0 0 8px rgba(244, 49, 98);
         animation: wave2 1.8s ease-out infinite normal;
     }
     .bg3{
