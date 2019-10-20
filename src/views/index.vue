@@ -13,8 +13,60 @@
         </div>
     </section>
 
+    <div class="animate wave">
+    <div class="w1"></div>
+    <div class="w2"></div>
+    <div class="w3"></div>
+    <div class="w4"></div>
+    </div>
+
+
 </div>
 </template>
+
+<style lang="less" scoped>
+@-webkit-keyframes opac{
+    from {
+        opacity: 1;
+        width:0;
+        height:0;
+        top:50%;
+        left:50%;
+    }
+    to {
+        opacity : 0;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+    }
+}
+
+.animate .w2{
+    -webkit-animation-delay:1s;
+}
+.animate .w3{
+    -webkit-animation-delay:2s;
+}
+.animate .w4{
+    -webkit-animation-delay:3s;
+}
+.wave{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.wave *{
+    border:1px solid #fff;
+    position:absolute;
+    border-radius:50%;
+    -webkit-animation:opac 4s infinite;
+}
+</style>
 
 <style lang="less" scoped>
 .container{ background: #f2f6ff url(../assets/images/bg1.png) no-repeat center 60px; background-size: 100%; }
