@@ -18,7 +18,7 @@
 </template>
 
 <style lang="less" scoped>
-.container{ background: #f2f7ff url(../assets/images/bg6.jpg) no-repeat center 0; background-size: 100%; }
+.container{ background: #f2f7ff url(../assets/images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%;  }
 .section-logo{ 
     padding: 30px 0 0;
     img{ width: 120px; margin: auto; }

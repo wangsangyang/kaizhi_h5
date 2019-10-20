@@ -38,7 +38,7 @@
 </template>
 
 <style lang="less" scoped>
-.container{ background: #f2f7ff url(../assets/images/bg8.jpg) no-repeat center 0; background-size: 100%; }
+.container{ background: #f2f7ff url(../assets/images/bg8.jpg) no-repeat center 0; background-size: 100% 100%; }
 .section-logo{ 
     padding: 30px 0 0;
     img{ width: 120px; margin: auto; }
@@ -176,15 +176,15 @@
             background-color: #2c191a;
             border-radius: 50%;
             position: absolute;
-            animation: nan-yan 1.2s linear infinite normal;
+            animation: nan-yan .8s linear infinite normal;
             transform-origin: 0 bottom;
         }
         .yan1{
-            top: 32px;
+            top: 31px;
             left: 42px;
         }
         .yan2{
-            top: 30px;
+            top: 29px;
             left: 59px;
         }
     }
@@ -205,7 +205,7 @@
             position: absolute;
             top: 44px;
             left: 0;
-            animation: nv-gebo 1.4s ease-in-out infinite normal;
+            animation: nv-gebo 1.2s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }        
         .yan{
@@ -239,19 +239,20 @@
     }
 }
 @keyframes nan-yan{
-    15%{ height: 1px;  }
+    15%{ height: 1px; }
     16%{ height: 4px; }
-}
-@keyframes nv-yan{
-    15%{ height: 1px;  }
-    16%{ height: 5px; }
+    0%{ transform: translate(0px, 0); }
+    25%{ transform: translate(1px, 0); }
+    50%{ transform: translate(0px, 0); }
+    75%{ transform: translate(-1px, 0); }
+    100%{ transform: translate(0px, 0); }
 }
 @keyframes nan-tou{
-    0%{ transform: skew(0)  rotate(0); }
+    0%{ transform: skew(0) rotate(0); }
     25%{ transform: skew(-1deg) rotate(1deg); }
     50%{ transform: skew(0) rotate(0); }
     75%{ transform: skew(1deg) rotate(-1deg); }
-    100%{ transform: skew(0)  rotate(0); }
+    100%{ transform: skew(0) rotate(0); }
 }
 @keyframes nan-shou{
     0%{ transform: translate(0, 0) skew(0) rotate(0); }
@@ -268,12 +269,21 @@
     100%{ transform: skew(0); }
 }
 
+@keyframes nv-yan{
+    15%{ height: 1px; }
+    16%{ height: 5px; }
+    0%{ transform: translate(0px, 0); }
+    25%{ transform: translate(1px, 0); }
+    50%{ transform: translate(0px, 0); }
+    75%{ transform: translate(-1px, 0); }
+    100%{ transform: translate(0px, 0); }
+}
 @keyframes nv-tou{
-    0%{ transform: skew(0)  rotate(0); }
+    0%{ transform: skew(0) rotate(0); }
     25%{ transform: skew(-1deg) rotate(1deg); }
     50%{ transform: skew(0) rotate(0); }
     75%{ transform: skew(1deg) rotate(-1deg); }
-    100%{ transform: skew(0)  rotate(0); }
+    100%{ transform: skew(0) rotate(0); }
 }
 @keyframes nv-gebo{
     0%{ transform: skew(0) translate(0, 0); }

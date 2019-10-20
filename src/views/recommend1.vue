@@ -168,7 +168,7 @@
             position: absolute;
             top: 0;
             left: 21%;
-            animation: nan-tou .8s ease-in-out infinite normal;
+            animation: nan-tou .8s linear infinite normal;
             transform-origin: 0 bottom;
         }
         .shou{  
@@ -193,16 +193,16 @@
             background-color: #2c191a;
             border-radius: 50%;
             position: absolute;
-            animation: nan-yan 1.2s linear infinite normal;
+            animation: nan-yan .8s linear infinite normal;
             transform-origin: 0 bottom;
         }
         .yan1{
             top: 35px;
-            left: 47px;
+            left: 45px;
         }
         .yan2{
-            top: 31px;
-            left: 64px;
+            top: 32px;
+            left: 63px;
         }
     }
     .nv{
@@ -215,7 +215,7 @@
             position: absolute;
             top: 12px;
             left: 36%;
-            animation: nv-tou 1.2s ease-in-out infinite normal;
+            animation: nv-tou 1.2s linear infinite normal;
             transform-origin: 0 bottom;
         }
         .gebo{  
@@ -248,7 +248,7 @@
         }
         .yan1{
             top: 43px;
-            left: 53px;
+            left: 52px;
         }
         .yan2{
             top: 42px;
@@ -259,10 +259,11 @@
 @keyframes nan-yan{
     15%{ height: 1px;  }
     16%{ height: 4px; }
-}
-@keyframes nv-yan{
-    15%{ height: 1px;  }
-    16%{ height: 5px; }
+    0%{ transform: translate(0px, 0); }
+    25%{ transform: translate(1px, 0); }
+    50%{ transform: translate(0px, 0); }
+    75%{ transform: translate(-1px, 0); }
+    100%{ transform: translate(0px, 0); }
 }
 @keyframes nan-tou{
     0%{ transform: skew(0)  rotate(0); }
@@ -286,6 +287,15 @@
     100%{ transform: skew(0); }
 }
 
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 5px; }
+    0%{ transform: translate(0px, 0); }
+    25%{ transform: translate(1px, 0); }
+    50%{ transform: translate(0px, 0); }
+    75%{ transform: translate(-1px, 0); }
+    100%{ transform: translate(0px, 0); }
+}
 @keyframes nv-tou{
     0%{ transform: skew(0)  rotate(0); }
     25%{ transform: skew(-1deg) rotate(1deg); }
