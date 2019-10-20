@@ -6,7 +6,11 @@
     </section>
 
     <article class="article-content">
-        <h3 class="title"><img src="../assets/images/bg-title2.png"></h3>
+        <h3 class="title">
+            <img class="bg" src="../assets/images/bg-title2.png">
+            <img class="icon icon-phone" src="../assets/images/bg-phone.png">
+            <img class="icon icon-mao" src="../assets/images/bg-mao.png">
+        </h3>
         <div class="content">
             <p>也许你是个初出茅庐的新人，对一切都充满未知，但是这也说明希望才刚刚开始。</p>
             <p>当你对未来还充满茫然的时候，不如再给自己人生加点分：法国凯致商学院<b>本科项目</b>六年蝉联全法第一，<b>国际本科(IBBA)项目</b>稳居全法第二，国际化顶尖师资力量，多元化的文化氛围，培养你的国际视野。</p>
@@ -29,12 +33,16 @@
         <div class="nan">
             <img class="ren" src="../assets/images/nan1.png">
             <img class="tou" src="../assets/images/nan-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="shou" src="../assets/images/nan-shou-1.png">
             <img class="gebo" src="../assets/images/nan-gebo-1.png">
         </div>
         <div class="nv">
             <img class="ren" src="../assets/images/nv1.png">
             <img class="tou" src="../assets/images/nv-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="gebo" src="../assets/images/nv-gebo-1.png">
         </div>
     </section>
@@ -54,14 +62,39 @@
     padding: 0 30px 36px;
     border-radius: 6px;
     position: relative;
-    top: 40px;
+    top: 38px;
     .title{ 
-        margin-bottom: -20px;
-        img{
+        margin-bottom: -18px;
+        position: relative;
+        .bg{
             width: 100%;
             position: relative;
-            top: -30px;
+            top: -20px;
         }
+        .icon{
+            position: absolute;
+        }
+        .icon-phone{
+            width: 20px;
+            left: 65px;
+            top: 8px;
+            animation: phone 1.8s ease-out infinite normal;
+        }
+        .icon-mao{
+            width: 40px;
+            right: -8px;
+            top: -32px;
+            animation: mao 1.8s ease-out infinite normal;
+        }
+
+    }
+    @keyframes phone{
+        0%{ transform: translate(0, 0); }
+        50%{ transform: translate(0, -10px); }
+    }
+    @keyframes mao{
+        0%{ transform: translate(0, 0); }
+        50%{ transform: translate(0, 10px); }
     }
     .content{
         font-size: 12px;
@@ -154,6 +187,23 @@
             animation: nan-gebo .8s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }
+        .yan{
+            width: 5px;
+            height: 4px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nan-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .yan1{
+            top: 35px;
+            left: 47px;
+        }
+        .yan2{
+            top: 31px;
+            left: 64px;
+        }
     }
     .nv{
         width: 29.2%;
@@ -176,7 +226,43 @@
             animation: nv-gebo 1.4s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }
+        .yan{
+            width: 6px;
+            height: 5px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nv-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 1px;
+                height: 3px;
+                background-color: #2c191a;
+                transform: rotate(-35deg);
+            }
+        }
+        .yan1{
+            top: 43px;
+            left: 53px;
+        }
+        .yan2{
+            top: 42px;
+            left: 64px;
+        }
     }
+}
+@keyframes nan-yan{
+    15%{ height: 1px;  }
+    16%{ height: 4px; }
+}
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 5px; }
 }
 @keyframes nan-tou{
     0%{ transform: skew(0)  rotate(0); }

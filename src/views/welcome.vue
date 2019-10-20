@@ -6,11 +6,10 @@
     </section>
 
     <section class="section-btn" @click="link">
-        <div class="bg1">
-            <div class="bg2">
-                <img src="../assets/images/btn2.png">
-            </div>
-        </div>
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="bg3"></div>
+        <img src="../assets/images/btn2.png">
     </section>
 
     <section class="section-person">
@@ -18,6 +17,8 @@
             <img class="dialog" src="../assets/images/dialog-1.png">
             <img class="ren" src="../assets/images/nan1.png">
             <img class="tou" src="../assets/images/nan-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="shou" src="../assets/images/nan-shou-1.png">
             <img class="gebo" src="../assets/images/nan-gebo-1.png">
         </div>
@@ -25,6 +26,8 @@
             <img class="dialog" src="../assets/images/dialog-2.png">
             <img class="ren" src="../assets/images/nv1.png">
             <img class="tou" src="../assets/images/nv-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="gebo" src="../assets/images/nv-gebo-1.png">
         </div>
     </section>
@@ -45,25 +48,37 @@
     top: 285px;
     left: 50%;
     transform: translate(-50%, 0);
-    border-radius: 50%;
-    background-color: rgba(148, 75, 171, .4);
-    box-shadow: 0 0 10px rgba(148, 75, 171);
     .bg1{
-        border-radius: 50%; 
-        background-color: rgba(244, 49, 98, .4);
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        margin: -30px 0 0 -30px;
+        border-radius: 50%;
+        background-color: rgba(148, 75, 171, .4);
+        box-shadow: 0 0 12px rgba(148, 75, 171, 0.9);
+        animation: wave2 1.8s ease-out infinite normal;
+        -webkit-animation-delay: 0.8s;
     }  
     .bg2{
-        width: 46px;
-        height: 46px;
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -30px 0 0 -30px;
         border-radius: 50%; 
-        background-color: rgba(210, 43, 62);
-        box-shadow: 0 0 8px rgba(210, 43, 62, .6);
+        background-color: rgba(244, 49, 98, .4);
+        box-shadow: 0 0 8px rgba(244, 49, 98, .9);
+        animation: wave2 1.8s ease-out infinite normal;
+    }
+    .bg3{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%; 
+        background: url(../assets/images/r1.png) no-repeat center center; 
+        background-size: 100%; 
         position: absolute;
         left: 50%;
         top: 50%;
@@ -76,6 +91,14 @@
         top: 50%;
         transform: translate(-50%, -50%);
     }
+}
+@keyframes wave1{
+    0%{ transform: scale(0.9); opacity: 1; }
+    100%{ transform: scale(2); opacity: 0.1; }
+}
+@keyframes wave2{
+    0%{ transform: scale(0.9); opacity: 1; }
+    100%{ transform: scale(2); opacity: 0.1; }
 }
 .section-person{
     display: flex;
@@ -128,6 +151,23 @@
             right: 0px;
             animation: nan-gebo .8s ease-in-out infinite normal;
             transform-origin: 0 bottom;
+        }        
+        .yan{
+            width: 5px;
+            height: 4px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nan-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .yan1{
+            top: 43px;
+            left: 55px;
+        }
+        .yan2{
+            top: 39px;
+            left: 78px;
         }
     }
     .nv{
@@ -159,7 +199,43 @@
             animation: nv-gebo 1s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }
+        .yan{
+            width: 6px;
+            height: 6px;
+            background-color: #2c191a;
+            border-radius: 100%;
+            position: absolute;
+            animation: nv-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 1px;
+                height: 3px;
+                background-color: #2c191a;
+                transform: rotate(-35deg);
+            }
+        }
+        .yan1{
+            top: 43px;
+            left: 65px;
+        }
+        .yan2{
+            top: 42px;
+            left: 80px;
+        }
     }
+}
+@keyframes nan-yan{
+    15%{ height: 1px;  }
+    16%{ height: 4px; }
+}
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 6px; }
 }
 @keyframes nan-dialog{
     70%{ transform: scale(1.2); }

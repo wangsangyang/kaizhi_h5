@@ -6,7 +6,11 @@
     </section>
 
     <article class="article-content">
-        <h3 class="title"><img src="../assets/images/bg-title3.png"></h3>
+        <h3 class="title">
+            <img class="bg" src="../assets/images/bg-title3.png">
+            <img class="icon icon-phone" src="../assets/images/bg-phone.png">
+            <img class="icon icon-mao" src="../assets/images/bg-mao.png">
+        </h3>
         <div class="content">
             <p>即使拥有非凡的职业成就，你仍旧保持开放、好奇的心态，当你仰望最高峰，一段MBA之旅会为你披荆斩棘，助你勇往直前。</p>
             <p>法国凯致商学院与上海交通大学合作的<b>国际在职MBA(Global-MBA)项目</b>旨在培养国际化的精英领袖；<b>欧亚工商管理博士(EA-DBA)项目</b>更是聚集三校教授，为全球企业领导者提供一个优秀和创意澎湃的学术氛围，以及一对一的悉心指导，是通往精英圈层的捷径。</p>
@@ -28,12 +32,16 @@
         <div class="nan">
             <img class="ren" src="../assets/images/nan1.png">
             <img class="tou" src="../assets/images/nan-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="shou" src="../assets/images/nan-shou-1.png">
             <img class="gebo" src="../assets/images/nan-gebo-1.png">
         </div>
         <div class="nv">
             <img class="ren" src="../assets/images/nv1.png">
             <img class="tou" src="../assets/images/nv-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="gebo" src="../assets/images/nv-gebo-1.png">
         </div>
     </section>
@@ -53,14 +61,39 @@
     padding: 0 30px 36px;
     border-radius: 6px;
     position: relative;
-    top: 40px;
+    top: 38px;
     .title{ 
-        margin-bottom: -20px;
-        img{
+        margin-bottom: -18px;
+        position: relative;
+        .bg{
             width: 100%;
             position: relative;
-            top: -30px;
+            top: -20px;
         }
+        .icon{
+            position: absolute;
+        }
+        .icon-phone{
+            width: 20px;
+            left: 22px;
+            top: 8px;
+            animation: phone 1.8s ease-out infinite normal;
+        }
+        .icon-mao{
+            width: 40px;
+            right: -8px;
+            top: -32px;
+            animation: mao 1.8s ease-out infinite normal;
+        }
+
+    }
+    @keyframes phone{
+        0%{ transform: translate(0, 0); }
+        50%{ transform: translate(0, -10px); }
+    }
+    @keyframes mao{
+        0%{ transform: translate(0, 0); }
+        50%{ transform: translate(0, 10px); }
     }
     .content{
         font-size: 12px;
@@ -153,6 +186,23 @@
             animation: nan-gebo .8s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }
+        .yan{
+            width: 5px;
+            height: 4px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nan-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .yan1{
+            top: 35px;
+            left: 47px;
+        }
+        .yan2{
+            top: 31px;
+            left: 64px;
+        }
     }
     .nv{
         width: 29.2%;
@@ -175,7 +225,43 @@
             animation: nv-gebo 1.4s ease-in-out infinite normal;
             transform-origin: 0 bottom;
         }
+        .yan{
+            width: 6px;
+            height: 5px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nv-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 1px;
+                height: 3px;
+                background-color: #2c191a;
+                transform: rotate(-35deg);
+            }
+        }
+        .yan1{
+            top: 43px;
+            left: 53px;
+        }
+        .yan2{
+            top: 42px;
+            left: 64px;
+        }
     }
+}
+@keyframes nan-yan{
+    15%{ height: 1px;  }
+    16%{ height: 4px; }
+}
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 5px; }
 }
 @keyframes nan-tou{
     0%{ transform: skew(0)  rotate(0); }

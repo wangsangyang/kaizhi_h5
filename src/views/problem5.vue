@@ -12,6 +12,7 @@
 
     <section class="section-btn" @click="linkNext">
         <div class="inner">提交GET你的超能力</div>
+        <i class="wave"></i>
     </section>
 
 
@@ -106,7 +107,23 @@
         color: #fff;
         border-radius: 40px;
         font-size: 15px;
+        position: relative;
+        z-index: 3;
     }
+    .wave{
+        position: absolute;
+        left: 6px;
+        right: 6px;
+        top: 6px;
+        bottom: 6px;
+        border-radius: 40px;
+        background-color: rgba(210, 43, 63, 0.4);
+        animation: wave2 .9s ease-out infinite normal;
+    }
+}
+@keyframes wave2{
+    40%{ left: 0px; right: 0px; top: 0px; bottom: 0px; }
+    41%{ left: 6px; right: 6px; top: 6px; bottom: 6px; }
 }
 .section-person{
     display: flex;
