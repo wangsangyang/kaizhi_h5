@@ -10,7 +10,12 @@ import problem3 from '@/views/problem3'//问题3
 import problem4 from '@/views/problem4'//问题4
 import problem5 from '@/views/problem5'//问题5
 import answerResult from '@/views/answer-result'//结果页
-import share from '@/views/share'//分享
+import share from '@/views/share'//分享页
+import recommend1 from '@/views/recommend1'//推荐页1
+import recommend2 from '@/views/recommend2'//推荐页2
+
+
+
 
 Vue.use(Router)
 
@@ -78,6 +83,18 @@ const router = new Router({
       path: '/share',
       name: 'share',
       component: share,
+      meta: { needLogin: false, keepAlive: true, title: '' }
+    },
+    {
+      path: '/recommend/1',
+      name: 'recommend1',
+      component: recommend1,
+      meta: { needLogin: false, keepAlive: true, title: '' }
+    },
+    {
+      path: '/recommend/2',
+      name: 'recommend2',
+      component: recommend2,
       meta: { needLogin: false, keepAlive: true, title: '' }
     },
 

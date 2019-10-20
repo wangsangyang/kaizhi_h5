@@ -20,8 +20,8 @@
 <style lang="less" scoped>
 .container{ background: #f2f7ff url(../assets/images/bg7.jpg) no-repeat center 0; background-size: 100%; }
 .section-logo{ 
-    padding: 32px 0 0;
-    img{ width: 130px; margin: auto; }
+    padding: 30px 0 0;
+    img{ width: 120px; margin: auto; }
 }
 .section-problem{
     padding: 20px 22px 0;

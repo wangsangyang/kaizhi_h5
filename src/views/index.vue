@@ -19,8 +19,8 @@
 <style lang="less" scoped>
 .container{ background: #f2f6ff url(../assets/images/bg1.png) no-repeat center 60px; background-size: 100%; }
 .section-logo{ 
-    padding: 32px 0 0;
-    img{ width: 130px; margin: auto; }
+    padding: 30px 0 0;
+    img{ width: 120px; margin: auto; }
 }
 .section-btn{
     width: 112px;

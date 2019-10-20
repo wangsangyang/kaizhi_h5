@@ -14,14 +14,29 @@
         <div class="inner">提交GET你的超能力</div>
     </section>
 
+
+    <section class="section-person">
+        <div class="nan">
+            <img class="ren" src="../assets/images/nan1.png">
+            <img class="tou" src="../assets/images/nan-tou-1.png">
+            <img class="shou" src="../assets/images/nan-shou-1.png">
+            <img class="gebo" src="../assets/images/nan-gebo-1.png">
+        </div>
+        <div class="nv">
+            <img class="ren" src="../assets/images/nv1.png">
+            <img class="tou" src="../assets/images/nv-tou-1.png">
+            <img class="gebo" src="../assets/images/nv-gebo-1.png">
+        </div>
+    </section>
+
 </div>
 </template>
 
 <style lang="less" scoped>
 .container{ background: #f2f7ff url(../assets/images/bg8.jpg) no-repeat center 0; background-size: 100%; }
 .section-logo{ 
-    padding: 32px 0 0;
-    img{ width: 130px; margin: auto; }
+    padding: 30px 0 0;
+    img{ width: 120px; margin: auto; }
 }
 .section-problem{
     padding: 20px 22px 0;
@@ -78,6 +93,9 @@
     border: solid 4px #d22b3f;
     border-radius: 40px;
     padding: 6px;
+    position: relative;
+    margin-bottom: -32px;
+    z-index: 9;
     .inner{
         display: flex;
         align-items: center;
@@ -89,6 +107,106 @@
         border-radius: 40px;
         font-size: 15px;
     }
+}
+.section-person{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 13px;
+    height: 158px;
+    overflow: hidden;
+    .nan{
+        width: 40%;
+        position: relative;
+        .ren{ 
+            width: 100%; 
+            position: relative;
+            z-index: 2;
+         }
+        .tou{  
+            width: 30%;
+            position: absolute;
+            top: 0;
+            left: 21%;
+            animation: nan-tou .8s ease-in-out infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .shou{  
+            width: 20%;
+            position: absolute;
+            top: 45px;
+            right: 0px;
+            animation: nan-shou .8s ease-in-out infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .gebo{  
+            width: 22%;
+            position: absolute;
+            top: 46px;
+            right: 0px;
+            animation: nan-gebo .8s ease-in-out infinite normal;
+            transform-origin: 0 bottom;
+        }
+    }
+    .nv{
+        width: 30%;
+        position: relative;
+        .ren{ width: 100%; }
+        .tou{  
+            width: 55%;
+            position: absolute;
+            top: 2px;
+            left: 37%;
+            animation: nv-tou 1.2s ease-in-out infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .gebo{  
+            width: 26%;
+            position: absolute;
+            top: 44px;
+            left: 0;
+            animation: nv-gebo 1.4s ease-in-out infinite normal;
+            transform-origin: 0 bottom;
+        }
+    }
+}
+@keyframes nan-tou{
+    0%{ transform: skew(0)  rotate(0); }
+    25%{ transform: skew(-1deg) rotate(1deg); }
+    50%{ transform: skew(0) rotate(0); }
+    75%{ transform: skew(1deg) rotate(-1deg); }
+    100%{ transform: skew(0)  rotate(0); }
+}
+@keyframes nan-shou{
+    0%{ transform: translate(0, 0) skew(0) rotate(0); }
+    25%{ transform: translate(2px, 0) skew(-4deg) rotate(3deg); }
+    50%{ transform: translate(0, 0) skew(0) rotate(0); }
+    75%{ transform: translate(-1px, 0) skew(4deg) rotate(-2deg); }
+    100%{ transform: translate(0, 0) skew(0) rotate(0); }
+}
+@keyframes nan-gebo{
+    0%{ transform: skew(0); }
+    25%{ transform: skew(-1.5deg); }
+    50%{ transform: skew(0); }
+    75%{ transform: skew(1.5deg); }
+    100%{ transform: skew(0); }
+}
+
+@keyframes nv-tou{
+    0%{ transform: skew(0)  rotate(0); }
+    25%{ transform: skew(-1deg) rotate(1deg); }
+    50%{ transform: skew(0) rotate(0); }
+    75%{ transform: skew(1deg) rotate(-1deg); }
+    100%{ transform: skew(0)  rotate(0); }
+}
+@keyframes nv-gebo{
+    0%{ transform: skew(0) translate(0, 0); }
+    25%{ transform: skew(-6deg) rotate(2deg) translate(0, -1px); }
+    50%{ transform: skew(0) translate(0, 0); }
+    75%{ transform: skew(6deg) rotate(-2deg) translate(0, 1px); }
+    100%{ transform: skew(0) translate(0, 0); }
 }
 </style>
 
