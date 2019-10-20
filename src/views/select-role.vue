@@ -4,6 +4,9 @@
     <section class="section-logo">
         <img src="../assets/images/logo.png">
     </section>
+    <section class="section-title">
+        <img src="../assets/images/bg3-title.png">
+    </section>
 
     <section class="section-nan">
         <img src="../assets/images/bg4.png">
@@ -18,31 +21,36 @@
 </template>
 
 <style lang="less" scoped>
-.container{ background: #f2f7ff url(../assets/images/bg3.png) no-repeat center 0; background-size: 100%; }
+.container{ background: #f2f7ff url(../assets/images/bg3.jpg) no-repeat center 0; background-size: 100% auto; }
 .section-logo{ 
     padding: 30px 0 0;
     img{ width: 120px; margin: auto; }
 }
+.section-title{ 
+    padding: 20px 0 0;
+    img{ width: 62%; margin: auto; }
+}
 .section-nan{
     width: 100%;
-    position: absolute;
-    top: 222px;
-    img{ width: 100%; }
+    position: relative;
+    margin-top: -40px;
+    img{ width: 85%; }
     .link{ 
         display: block;
-        width: 60%;
-        height: 120px;
+        width: 70%;
+        height: 90px;
         position: absolute;
-        left: 50%;
-        top: 70px;
+        left: 45%;
+        top: 55px;
         transform: translate(-50%, 0);
     }
 }
 .section-nv{
     width: 100%;
-    position: absolute;
-    top: 388px;
-    img{ width: 100%; }
+    position: relative;
+    margin-top: -130px;
+    text-align: right;
+    img{ width: 85%; display: inline-block; }
     .link{ 
         display: block;
         width: 60%;

@@ -43,58 +43,11 @@
     padding: 30px 0 0;
     img{ width: 120px; margin: auto; }
 }
-.section-problem{
-    padding: 20px 22px 0;
-    color: #fff;
-    .problem-title{
-        border-radius: 15px;
-        background-color: #183890;
-        padding: 12px 20px;
-        font-size: 14px;
-        margin-bottom: 30px;
-        position: relative;
-        .icon{
-            display: block;
-            width: 23px;
-            position: absolute;
-            bottom: -7px; 
-            left: 48px;
-        }
-    }
-    .problem-answer{
-        display: flex;
-        align-items: center;
-        border-radius: 12px;
-        background-color: #3854a1;
-        padding: 0 28px 0 40px;
-        font-size: 12px;
-        margin-top: 14px;
-        height: 54px;
-        line-height: 22px;
-        position: relative;
-        &.active{ background-color: #132a6a; }
-        .icon{
-            display: block;
-            width: 22px;
-            height: 21px;
-            position: absolute;
-            top: -10px; 
-            left: 3px;
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: 100% 100%;
-            &.A{ background-image: url(../assets/images/icon-A.png); }
-            &.B{ background-image: url(../assets/images/icon-B.png); }
-            &.C{ background-image: url(../assets/images/icon-C.png); }
-            &.D{ background-image: url(../assets/images/icon-D.png); }
-        }
-    }
-}
 .section-btn{ 
     width: 180px;
     height: 58px;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 30px;
     border: solid 4px #d22b3f;
     border-radius: 40px;
     padding: 6px;
