@@ -20,12 +20,16 @@
         <div class="nan">
             <img class="ren" src="../assets/images/nan1.png">
             <img class="tou" src="../assets/images/nan-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="shou" src="../assets/images/nan-shou-1.png">
             <img class="gebo" src="../assets/images/nan-gebo-1.png">
         </div>
         <div class="nv">
             <img class="ren" src="../assets/images/nv1.png">
             <img class="tou" src="../assets/images/nv-tou-1.png">
+            <i class="yan yan1"></i>
+            <i class="yan yan2"></i>
             <img class="gebo" src="../assets/images/nv-gebo-1.png">
         </div>
     </section>
@@ -165,6 +169,23 @@
             right: 0px;
             animation: nan-gebo .8s ease-in-out infinite normal;
             transform-origin: 0 bottom;
+        }        
+        .yan{
+            width: 5px;
+            height: 4px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nan-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+        }
+        .yan1{
+            top: 32px;
+            left: 42px;
+        }
+        .yan2{
+            top: 30px;
+            left: 59px;
         }
     }
     .nv{
@@ -186,8 +207,44 @@
             left: 0;
             animation: nv-gebo 1.4s ease-in-out infinite normal;
             transform-origin: 0 bottom;
+        }        
+        .yan{
+            width: 6px;
+            height: 5px;
+            background-color: #2c191a;
+            border-radius: 50%;
+            position: absolute;
+            animation: nv-yan 1.2s linear infinite normal;
+            transform-origin: 0 bottom;
+            &:after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: -2px;
+                left: 0;
+                width: 1px;
+                height: 3px;
+                background-color: #2c191a;
+                transform: rotate(-35deg);
+            }
+        }
+        .yan1{
+            top: 34px;
+            left: 54px;
+        }
+        .yan2{
+            top: 34px;
+            left: 66px;
         }
     }
+}
+@keyframes nan-yan{
+    15%{ height: 1px;  }
+    16%{ height: 4px; }
+}
+@keyframes nv-yan{
+    15%{ height: 1px;  }
+    16%{ height: 5px; }
 }
 @keyframes nan-tou{
     0%{ transform: skew(0)  rotate(0); }
