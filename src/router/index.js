@@ -107,8 +107,8 @@ const router = new Router({
 
   ],
   saveScrollPosition: true,
-  mode: 'history',
-  //mode: 'hash',
+  //mode: 'history',
+  mode: 'hash',
   linkActiveClass: 'active',
   linkExactActiveClass: '',
   scrollBehavior (to, from, savedPosition) {

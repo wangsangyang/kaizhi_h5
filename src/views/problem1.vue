@@ -7,7 +7,7 @@
 
     <section class="section-problem">
         <div class="problem-title"><img class="icon" src="../assets/images/icon-arrow.png">1.你对待朋友总是？</div>
-        <div class="problem-answer" :class="item.active?'active':''" @click="onSelectAnswer(item.letter, index)" v-for="(item, index) in answers" :key="item.letter"><i class="icon" :class="item.letter"></i>{{item.text}}</div>
+        <div class="problem-answer" :class="item.active?'active':''" @click="onSelectAnswer(item.letter, index)" v-for="(item, index) in answers1" :key="item.letter"><i class="icon" :class="item.letter"></i>{{item.text}}</div>
     </section>
 
     <section class="section-btn">
@@ -168,12 +168,10 @@ export default {
     },
     methods: {
         onSelectAnswer(letter, index){
-            //console.log(letter);
-            //console.log(index);
-            this.answers[index].active = !this.answers[index].active;
+            this.answers1[index].active = !this.answers1[index].active;
         },
         linkNext(){
-            let answers = this.answers.filter((v, k)=>{
+            let answers = this.answers1.filter((v, k)=>{
                 if(v.active){
                     return v.active;
                 }
