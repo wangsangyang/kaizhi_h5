@@ -336,10 +336,10 @@ export default {
 
                     wx.config({
                         debug: true,
-                        appId: process.env.API_URL,
-                        timestamp: data.timestamp,
+                        appId: data.appid,
+                        timestamp: data.time,
                         nonceStr: data.noncestr,
-                        signature: data.jsapi_ticket,
+                        signature: data.signature,
                         jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
                     });
 
