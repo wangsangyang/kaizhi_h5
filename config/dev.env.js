@@ -4,7 +4,6 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  API_URL: '"https://testing-driver-app-api.dev.muztg.com/"', //测试地址
-  UPLOAD_URL: '"https://testing-storage-api.dev.muztg.com/"' //上传图片测试地址
-  //UPLOAD_URL: '"https://guoxiaod-storage-api.dev.muztg.com/"' //上传图片测试地址
+  API_URL: '"http://lumina.msldigital.cn/"', //测试地址
+  appId: '"wx77d75be37ca9afb4"' //上传图片测试地址
 })

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="Content-Type" charset="UTF-8">
+	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+	<title>凯致商学院</title>
+  <script type="text/javascript" src="js/lib-flexible.min.js"></script>
+  <link rel="stylesheet" type="text/css" type="" href="css/style.css" />
+</head>
+
+<body>
+	<!--首页-->
+	<article class="page page-index">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <section class="section-btn-wave" @click="link">
+	        <div class="bg1"></div>
+	        <div class="bg2"></div>
+	        <div class="bg3"></div>
+	        <img src="images/btn1.png">
+	    </section>
+	</article>
+
+	<!--welcome页-->
+	<article class="page page-welcome">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <section class="section-btn" @click="link">
+	        <div class="bg1"></div>
+	        <div class="bg2"></div>
+	        <div class="bg3"></div>
+	        <img src="images/btn2.png">
+	    </section>
+	    <section class="section-person">
+	        <img class="dialog dialog1" src="images/dialog-1.png">
+	        <img class="dialog dialog2" src="images/dialog-2.png">
+	        <div class="inner">
+	            <div class="nan">
+	                <img class="ren" src="images/nan1.png">
+	                <img class="tou" src="images/nan-tou-1.png">
+	                <i class="yan yan1"></i>
+	                <i class="yan yan2"></i>
+	                <img class="shou" src="images/nan-shou-1.png">
+	                <img class="gebo" src="images/nan-gebo-1.png">
+	            </div>
+	            <div class="nv">
+	                <img class="ren" src="images/nv1.png">
+	                <img class="tou" src="images/nv-tou-1.png">
+	                <i class="yan yan1"></i>
+	                <i class="yan yan2"></i>
+	                <img class="gebo" src="images/nv-gebo-1.png">
+	            </div>
+	        </div>
+	    </section>
+	</article>
+
+	<!--现在职场状态页-->
+	<article class="page page-role">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <section class="section-title">
+	        <img src="images/bg3-title.png">
+	    </section>
+	    <section class="section-nan">
+	        <img src="images/bg4.png">
+	        <a class="link" @click="link"></a>
+	    </section>
+	    <section class="section-nv">
+	        <img src="images/bg5.png">
+	        <a class="link" @click="link"></a>
+	    </section>
+	</article>
+
+
+
+	<!--回答问题-->
+	<article class="page page-problem">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <section class="section-problem">
+	        <div class="problem-title"><img class="icon" src="images/icon-arrow.png">1.你对待朋友总是？</div>
+	        <div class="problem-answer" :class="item.active?'active':''" @click="onSelectAnswer(item.letter, index)" v-for="(item, index) in answers" :key="item.letter"><i class="icon" :class="item.letter"></i>{{item.text}}</div>
+	    </section>
+	    <section class="section-btn">
+	        <img src="images/btn3.png" @click="linkNext">
+	    </section>
+	</article>
+
+  <script type="text/javascript" src="js/vue.js"></script>
+</body>
+</html>

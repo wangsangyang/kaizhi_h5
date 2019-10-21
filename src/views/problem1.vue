@@ -84,7 +84,7 @@ export default {
                 return v.letter;
             });
             console.log(answers);
-            this.$router.push({name: 'problem2', query: {answer1: answers.join(',') } });
+            this.$router.push({name: 'problem2', params: {answer1: answers.join(',') } });
         },
     }
 }

@@ -64,7 +64,7 @@ export default {
         }
     },
     created(){
-        this.answer1 = this.$route.query.answer1;
+        this.answer1 = this.$route.params.answer1;
         console.log(this.answer1);
     },
     methods: {
@@ -89,7 +89,7 @@ export default {
                 return v.letter;
             });
             console.log(answers);
-            this.$router.push({name: 'problem3', query: {answer1: this.answer1, answer2: answers.join(',') } });
+            this.$router.replace({name: 'problem3', params: {answer1: this.answer1, answer2: answers.join(',') } });
         },
     }
 }

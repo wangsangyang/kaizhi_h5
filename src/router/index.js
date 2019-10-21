@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import auth from '@/views/auth'//微信授权
 import index from '@/views/index'//首页
 import welcome from '@/views/welcome'//欢迎页面
 import selectRole from '@/views/select-role'//选择职场状态
@@ -24,6 +25,12 @@ const router = new Router({
     {
       path: '/',
       redirect: '/index'
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: auth,
+      meta: { needLogin: false, keepAlive: true, title: '' }
     },
     {
       path: '/index',
@@ -100,7 +107,8 @@ const router = new Router({
 
   ],
   saveScrollPosition: true,
-  history: true,
+  mode: 'history',
+  //mode: 'hash',
   linkActiveClass: 'active',
   linkExactActiveClass: '',
   scrollBehavior (to, from, savedPosition) {

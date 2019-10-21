@@ -38,7 +38,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'cube-ui': 'cube-ui/lib'
+      'cube-ui': 'cube-ui/lib',
+      'jquery': path.resolve(__dirname, '../node_modules/jquery/src/jquery')
     }
   },
   externals: {

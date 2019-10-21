@@ -148,11 +148,10 @@
 .section-person{
     display: flex;
     justify-content: space-between;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     z-index: 2;
     margin: 0 13px;
-    height: 146px;
+    height: 152px;
     overflow: hidden;
     .nan{
         width: 43%;

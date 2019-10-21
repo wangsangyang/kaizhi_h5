@@ -65,8 +65,8 @@ export default {
         }
     },
     created(){
-        this.answer1 = this.$route.query.answer1;
-        this.answer2 = this.$route.query.answer2;
+        this.answer1 = this.$route.params.answer1;
+        this.answer2 = this.$route.params.answer2;
     },
     methods: {
         onSelectAnswer(letter, index){
@@ -88,7 +88,7 @@ export default {
                 return v.letter;
             });
             console.log(answers);
-            this.$router.push({name: 'problem4', query: {answer1: this.answer1, answer2: this.answer2, answer3: answers.join(',') } });
+            this.$router.replace({name: 'problem4', params: {answer1: this.answer1, answer2: this.answer2, answer3: answers.join(',') } });
         },
     }
 }

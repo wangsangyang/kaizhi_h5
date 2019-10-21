@@ -66,9 +66,9 @@ export default {
         }
     },
     created(){
-        this.answer1 = this.$route.query.answer1;
-        this.answer2 = this.$route.query.answer2;
-        this.answer3 = this.$route.query.answer3;
+        this.answer1 = this.$route.params.answer1;
+        this.answer2 = this.$route.params.answer2;
+        this.answer3 = this.$route.params.answer3;
     },
     methods: {
         onSelectAnswer(letter, index){
@@ -90,7 +90,7 @@ export default {
                 return v.letter;
             });
             console.log(answers);
-            this.$router.push({name: 'problem5', query: {answer1: this.answer1, answer2: this.answer2, answer3: this.answer3, answer4: answers.join(',') } });
+            this.$router.replace({name: 'problem5', params: {answer1: this.answer1, answer2: this.answer2, answer3: this.answer3, answer4: answers.join(',') } });
         },
     }
 }

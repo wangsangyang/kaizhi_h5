@@ -16,12 +16,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "cube-ui": "^1.12.19",
+    "jquery": "^3.4.1",
     "lib-flexible": "^0.3.2",
     "lrz": "^4.9.40",
     "normalize.css": "^8.0.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1",
-    "cube-ui": "^1.12.19"
+    "vue-router": "^3.0.1"
   },
   "transformModules": {
     "cube-ui": {

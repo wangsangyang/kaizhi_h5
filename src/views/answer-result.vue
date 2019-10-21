@@ -193,12 +193,16 @@
 </style>
 
 <script>
+import $ from 'jquery'
 export default {
     name: 'problem1',
     data(){
         return {
             showDialog: false
         }
+    },
+    created(){
+        this.init();
     },
     methods: {
         linkBack(){
@@ -212,7 +216,49 @@ export default {
         },
         onCloseShare(){
             this.showDialog = false;
-        }
+        },
+        init(){
+            let url = location.href;
+            $.ajax({
+                url: 'http://wx77d75be37ca9afb4.mosspage.wingoing.cn/index/index/getSign',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                data: {
+                    fullurl: url
+                },
+                success: function (data) {
+                    console.log(data);
+
+                    wx.config({
+                        debug: false,
+                        appId: appId,
+                        timestamp: timestamp,
+                        nonceStr: nonceStr,
+                        signature: signature,
+                        jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
+                    });
+
+                    let link = window.location.origin + 'index';
+                    //console.log(link);
+                    wx.ready(function () {
+                        //分享给朋友
+                        wx.updateAppMessageShareData({ 
+                            title: '就差你咯！点一下帮我免单，送你大礼包~', // 分享标题
+                            desc: '注册礼包，打车礼包，邀请礼包，礼包多到拿不完。', // 分享描述
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: 'https://static.muztg.com/static/images/logo.png', // 分享图标
+                        });
+
+                        //分享到朋友圈
+                        wx.updateTimelineShareData({ 
+                            title: '就差你咯！点一下帮我免单，送你大礼包~', // 分享标题
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: 'https://static.muztg.com/static/images/logo.png', // 分享图标
+                        })
+                    })
+                }
+            });
+        },
     }
 }
 </script>

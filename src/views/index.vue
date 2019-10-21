@@ -85,9 +85,26 @@
 <script>
 export default {
     name: 'index',
+    created(){
+        this.init();
+    },
     methods: {
         link(){
             this.$router.push({name: 'welcome'});
+        },
+        init(){
+            let param = {
+                url: 'http://lumina.msldigital.cn/index/api/authorization',
+                data: {
+                    code: this.$route.query.code
+                }
+            };
+            this.$http(param).then(response=>{
+                if(response.data.code===10000){
+                }
+            }).catch(error=>{
+                console.log(error);
+            });
         },
     }
 }

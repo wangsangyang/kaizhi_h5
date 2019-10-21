@@ -285,10 +285,10 @@ export default {
         }
     },
     created(){
-        this.answer1 = this.$route.query.answer1;
-        this.answer2 = this.$route.query.answer2;
-        this.answer3 = this.$route.query.answer3;
-        this.answer4 = this.$route.query.answer4;
+        this.answer1 = this.$route.params.answer1;
+        this.answer2 = this.$route.params.answer2;
+        this.answer3 = this.$route.params.answer3;
+        this.answer4 = this.$route.params.answer4;
     },
     methods: {
         onSelectAnswer(letter, index){
@@ -310,7 +310,7 @@ export default {
                 return v.letter;
             });
             console.log(answers);
-            this.$router.push({name: 'answerResult', query: {answer1: this.answer1, answer2: this.answer2, answer3: this.answer3, answer4: this.answer4, answer5: answers.join(',') } });
+            this.$router.replace({name: 'answerResult', params: {answer1: this.answer1, answer2: this.answer2, answer3: this.answer3, answer4: this.answer4, answer5: answers.join(',') } });
         },
     }
 }

@@ -300,12 +300,68 @@
 </style>
 
 <script>
+import $ from 'jquery'
 export default {
     name: 'welcome',
+    created(){
+        console.log(location.origin);
+        this.share();
+    },
     methods: {
         link(){
             this.$router.push({name: 'selectRole'});
         },
+        share(){
+            let u = navigator.userAgent;
+            let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+            let isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            let url = ''
+            if (isAndroid) {
+                url = location.href;
+            }
+            if (isIOS) {
+                url = location.href.split('#')[0]  //hash后面的部分如果带上ios中config会不对
+            }
+            let origin = location.origin;
+            let link = origin;
+            $.ajax({
+                url: 'http://wx77d75be37ca9afb4.mosspage.wingoing.cn/index/index/getSign',
+                dataType: 'jsonp',
+                jsonp: 'callback',
+                data: {
+                    fullurl: url
+                },
+                success: function (data) {
+                    console.log(data);
+
+                    wx.config({
+                        debug: true,
+                        appId: process.env.API_URL,
+                        timestamp: data.timestamp,
+                        nonceStr: data.noncestr,
+                        signature: data.jsapi_ticket,
+                        jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData']
+                    });
+
+                    wx.ready(function () {
+                        //分享给朋友
+                        wx.updateAppMessageShareData({ 
+                            title: '凯致商学院', // 分享标题
+                            //desc: '注册礼包，打车礼包，邀请礼包，礼包多到拿不完。', // 分享描述
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: '../assets/images/logo.png', // 分享图标
+                        });
+
+                        //分享到朋友圈
+                        wx.updateTimelineShareData({ 
+                            title: '凯致商学院', // 分享标题
+                            link: link, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                            imgUrl: '../assets/images/logo.png', // 分享图标
+                        })
+                    })
+                }
+            });
+        }
     }
 }
 </script>
