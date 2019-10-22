@@ -449,7 +449,7 @@
 			            //console.log(answers);
 			            this.last_answers.push(answers);
 			            console.log(this.last_answers);
-	            		$('.page-problem').removeClass('bg'+(this.index-1));
+	            		$('.page-problem').removeClass('bg0 bg1 bg2 bg3 bg4');
 	            		$('.page-problem').addClass('bg'+this.index);
 
 			            if(this.index>=4){
@@ -466,7 +466,7 @@
 							                v2.active = false;
 							            });
 					            });
-					            $('.page-problem').removeClass('bg1 bg2');
+	            				$('.page-problem').removeClass('bg0 bg1 bg2 bg3 bg4');
 		          				return;
 			            }
 			            this.index = this.index + 1;
