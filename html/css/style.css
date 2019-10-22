@@ -306,9 +306,9 @@ body{
 
 /*回答问题页面------------------------------------------------------------------------------*/
 .page-problem{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%; }
-.page-problem.bg0, .page-problem.bg2{ background: #f2f7ff url(../images/bg7.jpg) no-repeat center bottom; }
-.page-problem.bg1{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; }
-.page-problem.bg3{ background: #f2f7ff url(../images/bg8.jpg) no-repeat center bottom; }
+.page-problem.bg0, .page-problem.bg2{ background: #f2f7ff url(../images/bg7.jpg) no-repeat center bottom; background-size: 100% 100%; }
+.page-problem.bg1{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%; }
+.page-problem.bg3{ background: #f2f7ff url(../images/bg8.jpg) no-repeat center bottom; background-size: 100% 100%; }
 .page-problem .section-btn{ padding: 0.7467rem 0 0; }
 .page-problem .section-btn img{ width: 1.92rem; margin: auto; }
 .page-problem .section-btn-last{     
