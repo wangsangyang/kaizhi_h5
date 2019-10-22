@@ -25,7 +25,7 @@ body{
 	font-size: 0.3733rem;
 	color: #333;
 	position: relative;
-    display: none
+    display: 
 }
 .page.show{ display: block; } 
 .section-logo{ padding-top: 0.8rem;}
@@ -306,8 +306,137 @@ body{
 
 /*回答问题页面------------------------------------------------------------------------------*/
 .page-problem{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%; }
+.page-problem.bg0, .page-problem.bg2{ background: #f2f7ff url(../images/bg7.jpg) no-repeat center bottom; }
+.page-problem.bg1{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; }
+.page-problem.bg3{ background: #f2f7ff url(../images/bg8.jpg) no-repeat center bottom; }
 .page-problem .section-btn{ padding: 0.7467rem 0 0; }
 .page-problem .section-btn img{ width: 1.92rem; margin: auto; }
+.page-problem .section-btn-last{     
+    width: 180px;
+    height: 58px;
+    margin: auto;
+    margin-top: 30px;
+    border: solid 4px #d22b3f;
+    border-radius: 40px;
+    padding: 6px;
+    position: relative;
+    margin-bottom: -32px;
+    z-index: 9;
+}
+.page-problem .section-btn-last .inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #d22b3f;
+    color: #fff;
+    border-radius: 40px;
+    font-size: 15px;
+    position: relative;
+    z-index: 3;
+}
+.page-problem .section-btn-last .wave{
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    top: 6px;
+    bottom: 6px;
+    border-radius: 40px;
+    background-color: rgba(210, 43, 63, 0.4);
+    animation: problem-last-btn-wave .9s ease-out infinite normal;
+}
+@keyframes problem-last-btn-wave{
+    40%{ left: 0px; right: 0px; top: 0px; bottom: 0px; }
+    41%{ left: 6px; right: 6px; top: 6px; bottom: 6px; }
+}
+.page-problem .section-person{     
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    margin: 0 0.3467rem;
+    height: 4.2133rem;
+    overflow: hidden; 
+}
+.page-problem .section-person .nan{ width: 40%; position: relative; }
+.page-problem .section-person .nan .ren{ width: 100%; position: relative; z-index: 2; }
+.page-problem .section-person .nan .tou{  
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 21%;
+    animation: nan-tou .8s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-problem .section-person .nan .shou{  
+    width: 20%;
+    position: absolute;
+    top: 1.2rem;
+    right: 0.0rem;
+    animation: nan-shou .8s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-problem .section-person .nan .gebo{  
+    width: 22%;
+    position: absolute;
+    top: 1.2267rem;
+    right: 0.0rem;
+    animation: nan-gebo .8s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+} 
+.page-problem .section-person .nan .yan{
+    width: 0.1333rem;
+    height: 0.1067rem;
+    background-color: #2c191a;
+    border-radius: 50%;
+    position: absolute;
+    animation: nan-yan .8s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-problem .section-person .nan .yan1{ top: 0.8267rem; left: 1.12rem; }
+.page-problem .section-person .nan .yan2{ top: 0.7733rem; left: 1.5733rem; }
+.page-problem .section-person .nv{ width: 30%; position: relative; }
+.page-problem .section-person .nv .ren{ width: 100%; }
+.page-problem .section-person .nv .tou{  
+    width: 55%;
+    position: absolute;
+    top: 0.0533rem;
+    left: 37%;
+    animation: nv-tou 1.2s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-problem .section-person .nv .gebo{  
+    width: 26%;
+    position: absolute;
+    top: 1.1733rem;
+    left: 0;
+    animation: nv-gebo 1.2s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+} 
+.page-problem .section-person .nv .yan{  
+    width: 0.16rem;
+    height: 0.1333rem;
+    background-color: #2c191a;
+    border-radius: 50%;
+    position: absolute;
+    animation: nv-yan 1.2s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-problem .section-person .nv .yan:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -0.0533rem;
+    left: 0;
+    width: 0.0267rem;
+    height: 0.08rem;
+    background-color: #2c191a;
+    transform: rotate(-35deg);
+}
+.page-problem .section-person .nv .yan1{ top: 0.9067rem; left: 1.44rem; }
+.page-problem .section-person .nv .yan2{ top: 0.9067rem; left: 1.76rem; }
 
 
 /*答题结果页------------------------------------------------------------------------------*/

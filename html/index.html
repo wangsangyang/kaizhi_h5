@@ -134,14 +134,39 @@
 	        <div class="problem-title"><img class="icon" src="images/icon-arrow.png">{{init_title}}</div>
 	        <div class="problem-answer" :class="item.active?'active':''" @click="onSelectAnswer(item.letter, index)" v-for="(item, index) in init_answers" :key="item.letter"><i class="icon" :class="item.letter"></i>{{item.text}}</div>
 	    </section>
-	    <section class="section-btn">
-	        <img src="images/btn3.png" @click="linkDati">
-	    </section>
+	    <template v-if="index<4">
+			    <section class="section-btn">
+			        <img src="images/btn3.png" @click="linkDati">
+			    </section>
+	  	</template>
+	    <template v-else>
+			    <section class="section-btn-last" @click="linkDati">
+			        <div class="inner">提交GET你的超能力</div>
+			        <i class="wave"></i>
+			    </section>
+		      <section class="section-person">
+			        <div class="nan">
+			            <img class="ren" src="images/nan1.png">
+			            <img class="tou" src="images/nan-tou-1.png">
+			            <i class="yan yan1"></i>
+			            <i class="yan yan2"></i>
+			            <img class="shou" src="images/nan-shou-1.png">
+			            <img class="gebo" src="images/nan-gebo-1.png">
+			        </div>
+			        <div class="nv">
+			            <img class="ren" src="images/nv1.png">
+			            <img class="tou" src="images/nv-tou-1.png">
+			            <i class="yan yan1"></i>
+			            <i class="yan yan2"></i>
+			            <img class="gebo" src="images/nv-gebo-1.png">
+			        </div>
+			    </section>
+	  	</template>
 	</article>
 
 
 	<!--答题结果页-->
-	<article class="page page-dati-result" id="page-dati-result">
+	<article class="page page-dati-result">
 	    <section class="section-logo">
 	        <img src="images/logo.png">
 	    </section>
@@ -424,6 +449,8 @@
 			            //console.log(answers);
 			            this.last_answers.push(answers);
 			            console.log(this.last_answers);
+	            		$('.page-problem').removeClass('bg'+(this.index-1));
+	            		$('.page-problem').addClass('bg'+this.index);
 
 			            if(this.index>=4){
 			                alert('最终答案：'+ this.last_answers.join('/') );
@@ -439,6 +466,7 @@
 							                v2.active = false;
 							            });
 					            });
+					            $('.page-problem').removeClass('bg1 bg2');
 		          				return;
 			            }
 			            this.index = this.index + 1;
