@@ -54,7 +54,7 @@ const router = new Router({
       path: '/problem/1',
       name: 'problem1',
       component: problem1,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/problem/2',

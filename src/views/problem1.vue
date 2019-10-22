@@ -177,7 +177,6 @@ export default {
             this.init_answers[index].active = !this.init_answers[index].active;
         },
         linkNext(){
-            this.index = this.index + 1;
             let answers = this.init_answers.filter((v, k)=>{
                 if(v.active){
                     return v.active;
@@ -188,20 +187,23 @@ export default {
                 alert('请选择');
                 return;
             }
-
             answers = answers.map((v, k)=>{
                 return v.letter;
             });
             //console.log(answers);
-   
-            if(this.index<5){
-                this.last_answers.push(answers);
-                console.log(this.last_answers);
+            this.last_answers.push(answers);
+            console.log(this.last_answers);
+
+            if(this.index>=4){
+                alert('结束了');
+                this.$router.push({name: 'answerResult', params: {answers: this.last_answers.join(',') } }); 
+            }
+            this.index = this.index + 1;
+            if(!this.titles[this.index]) {
+                return;
+            }else{
                 this.init_title = this.titles[this.index];
                 this.init_answers = this.answers[this.index].list;
-            }else{
-                alert('结束了');
-               //this.$router.push({name: 'problem2', params: {answer1: answers.join(',') } }); 
             }
         },
     }

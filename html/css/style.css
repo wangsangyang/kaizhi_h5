@@ -11,70 +11,95 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #fff;
-    color: #333;
 }
 .clearfix{ *zoom: 1; }
 .clearfix:after{ content: ""; display: block; clear: both; height: 0; visibility: hidden; }
-
+#app{ width: 100%; height: 100%; }
 .page{ 
-		overflow: auto; 
-		background-color: #fff; 
-	  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-	  -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;
-	  height: 100%;
-	  font-size: 14px;
-	  color: #333;
-	  position: relative;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	overflow: auto; 
+	background-color: #fff; 
+	height: 100%;
+	font-size: 0.3733rem;
+	color: #333;
+	position: relative;
+    display: none
 }
-.section-logo{ padding: 30px 0 0;}
-.section-logo img{ width: 120px; margin: auto; }
+.page.show{ display: block; } 
+.section-logo{ padding-top: 0.8rem;}
+.section-logo img{ width: 3.2rem; margin: auto; }
 /*选择问题答案*/
-.section-problem{ padding: 20px 22px 0; color: #fff; }
-.section-problem .problem-title{ border-radius: 15px;  background-color: #183890; padding: 12px 20px; font-size: 14px; 
-		margin-bottom: 22px; position: relative; }
-.section-problem .problem-title .icon{ display: block; width: 23px; position: absolute; bottom: -7px; left: 48px; }
-.section-problem .problem-answer{ display: flex; align-items: center; border-radius: 12px; background-color: #3854a1; padding: 0 28px 0 40px;
-    font-size: 12px; margin-top: 14px; height: 48px; line-height: 20px; position: relative; }
+.section-problem{ padding: 0.5333rem 0.5867rem 0; color: #fff; }
+.section-problem .problem-title{ border-radius: 0.4rem;  background-color: #183890; padding: 0.32rem 0.5333rem; font-size: 0.3733rem; 
+	margin-bottom: 0.5867rem; position: relative; }
+.section-problem .problem-title .icon{ display: block; width: 0.6133rem; position: absolute; bottom: -0.1867rem; left: 1.28rem; }
+.section-problem .problem-answer{ 
+    display: flex; 
+    align-items: center; 
+    border-radius: 0.32rem; 
+    background-color: #3854a1; 
+    padding: 0 0.7467rem 0 1.0667rem;
+    font-size: 0.32rem; 
+    margin-top: 0.3733rem; 
+    height: 1.28rem; 
+    line-height: 0.5333rem; 
+    position: relative; 
+}
 .section-problem .problem-answer.active{ background-color: #132a6a; }
-.section-problem .problem-answer .icon{ display: block; width: 22px; height: 21px; position: absolute; top: -10px; left: 3px;
-		background-repeat: no-repeat; background-position: center center; background-size: 100% 100%; }
+.section-problem .problem-answer .icon{ 
+    display: block; 
+    width: 0.5867rem; 
+    height: 0.56rem; 
+    position: absolute; 
+    top: -0.2667rem; 
+    left: 0.08rem;
+	background-repeat: no-repeat; 
+    background-position: center center; 
+    background-size: 100% 100%; 
+}
 .section-problem .problem-answer .icon.A{ background-image: url(../images/icon-A.png); }
 .section-problem .problem-answer .icon.B{ background-image: url(../images/icon-B.png); }
 .section-problem .problem-answer .icon.C{ background-image: url(../images/icon-C.png); }
 .section-problem .problem-answer .icon.D{ background-image: url(../images/icon-D.png); }
-
-/*index------------------------------------------------------------------------------*/
-.page-index{ background: #f2f6ff url(../images/bg1.png) no-repeat center 60px; background-size: 100%; }
-.page-index .section-btn-wave{ width: 112px; height: 112px; position: absolute; bottom: 147px; left: 50%; transform: translate(-50%, 0); }
-.page-index .section-btn-wave .bg1{
-    width: 60px;
-    height: 60px;
+/*波纹按钮*/
+.section-btn-wave{ 
+    width: 2.9867rem; 
+    height: 2.9867rem; 
+    position: absolute; 
+    bottom: 3.92rem; 
+    left: 50%; 
+    transform: translate(-50%, 0); 
+}
+.section-btn-wave .bg1{
+    width: 1.6rem;
+    height: 1.6rem;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -30px 0 0 -30px;
+    margin: -0.8rem 0 0 -0.8rem;
     border-radius: 50%;
     background-color: rgba(148, 75, 171, .6);
     box-shadow: 0 0 8px rgba(148, 75, 171);
     animation: wave2 1.8s ease-out infinite normal;
     -webkit-animation-delay: 0.8s;
 }
-.page-index .section-btn-wave .bg2{
-    width: 60px;
-    height: 60px;
+.section-btn-wave .bg2{
+    width: 1.6rem;
+    height: 1.6rem;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -30px 0 0 -30px;
+    margin: -0.8rem 0 0 -0.8rem;
     border-radius: 50%; 
     background-color: rgba(244, 49, 98, .5);
-    box-shadow: 0 0 8px rgba(244, 49, 98);
+    box-shadow: 0 0 0.2133rem rgba(244, 49, 98);
     animation: wave2 1.8s ease-out infinite normal;
 }
-.page-index .section-btn-wave .bg3{
-    width: 60px;
-    height: 60px;
+.section-btn-wave .bg3{
+    width: 1.6rem;
+    height: 1.6rem;
     border-radius: 50%; 
     background: url(../images/r1.png) no-repeat center center; 
     background-size: 100%; 
@@ -83,8 +108,8 @@ body{
     top: 50%;
     transform: translate(-50%, -50%);
 }
-.page-index .section-btn-wave img{
-    width: 60px;
+.section-btn-wave img{
+    width: 1.6rem;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -99,92 +124,22 @@ body{
     100%{ transform: scale(2); opacity: 0.1; }
 }
 
+/*index------------------------------------------------------------------------------*/
+.page-index{ background: #f2f6ff url(../images/bg1.png) no-repeat center 1.6rem; background-size: 100%; }
+
 
 /*welcome------------------------------------------------------------------------------*/
-.page-welcome{ background: #f2f7ff url(../images/bg2.png) no-repeat center 12px; background-size: 100%; }
-.page-welcome .section-btn{
-		width: 88px;
-    height: 88px;
-    position: absolute;
-    z-index: 99;
-    top: 285px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.page-welcome .section-btn .bg1{
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -30px 0 0 -30px;
-    border-radius: 50%;
-    background-color: rgba(148, 75, 171, .6);
-    box-shadow: 0 0 8px rgba(148, 75, 171);
-    animation: wave2 1.8s ease-out infinite normal;
-    -webkit-animation-delay: 0.8s;
-}
-.page-welcome .section-btn .bg2{
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -30px 0 0 -30px;
-    border-radius: 50%; 
-    background-color: rgba(244, 49, 98, .5);
-    box-shadow: 0 0 8px rgba(244, 49, 98);
-    animation: wave2 1.8s ease-out infinite normal;
-}
-.page-welcome .section-btn .bg3{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; 
-    background: url(../images/r1.png) no-repeat center center; 
-    background-size: 100%; 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.page-welcome .section-btn img{
-    width: 40px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.page-welcome .section-person{
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    margin: 0 13px;
-}
-.page-welcome .section-person .inner{
-    height: 170px;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-}
-.page-welcome .section-person .dialog{  position: absolute; }
-.page-welcome .section-person .dialog1{
-    width: 47%;
-    left: 0;
-    top: -54px;
-    transform: scale(0);
-    animation: nan-dialog .8s ease-in-out .6s forwards;
-    animation-fill-mode: forwards;
-}
-.page-welcome .section-person .dialog2{
-    width: 50%;
-    right: 0;
-    top: -46px;
-    transform: scale(0);
-    animation: nv-dialog .8s ease-in-out 1.6s forwards;
-    animation-fill-mode: forwards;
-}
-.page-welcome .section-person .nan{ width: 52%; position: relative;  left: 10px; }
+.page-welcome{ background: #f2f7ff url(../images/bg2.png) no-repeat center 0.32rem; background-size: 100%; }
+.page-welcome .section-btn-wave{ width: 2.3467rem; height: 2.3467rem; z-index: 99; top: 7.6rem; }
+.page-welcome .section-btn-wave img{ width: 1.0667rem; }
+.page-welcome .section-person{ position: absolute; bottom: 0; z-index: 2; margin: 0 0.3467rem; }
+.page-welcome .section-person .inner{ height: 4.5333rem; overflow: hidden; display: flex; justify-content: space-between; }
+.page-welcome .section-person .talk{ position: absolute; transform: scale(0); animation-fill-mode: forwards; }
+.page-welcome .section-person .talk1{ width: 47%; left: 0; top: -1.44rem; }
+.page-welcome .section-person .talk2{ width: 50%; right: 0; top: -1.2267rem; }
+.page-welcome.show .section-person .talk1{ animation: talk .8s ease-in-out 0.3s forwards; }
+.page-welcome.show .section-person .talk2{ animation: talk .8s ease-in-out 1.6s forwards; }
+.page-welcome .section-person .nan{ width: 52%; position: relative; left: 0.2667rem; }
 .page-welcome .section-person .nan .ren{ width: 100%; position: relative; z-index: 2; }
 .page-welcome .section-person .nan .tou{  
     width: 30%;
@@ -197,36 +152,36 @@ body{
 .page-welcome .section-person .nan .shou{  
     width: 20%;
     position: absolute;
-    top: 60px;
-    right: -1px;
+    top: 1.6rem;
+    right: -0.0267rem;
     animation: nan-shou .8s ease-in-out infinite normal;
     transform-origin: 0 bottom;
 }
 .page-welcome .section-person .nan .gebo{  
     width: 22%;
     position: absolute;
-    top: 60px;
-    right: 0px;
+    top: 1.6rem;
+    right: 0.0rem;
     animation: nan-gebo .8s ease-in-out infinite normal;
     transform-origin: 0 bottom;
 } 
 .page-welcome .section-person .nan .yan{
-    width: 5px;
-    height: 4px;
+    width: 0.1333rem;
+    height: 0.1067rem;
     background-color: #2c191a;
     border-radius: 50%;
     position: absolute;
     animation: nan-yan .8s linear infinite normal;
     transform-origin: 0 bottom;
 }
-.page-welcome .section-person .nan .yan1{ top: 43px; left: 55px; }
-.page-welcome .section-person .nan .yan2{ top: 39px; left: 78px; }
-.page-welcome .section-person .nv{ width: 36%; position: relative; right: 28px; }
+.page-welcome .section-person .nan .yan1{ top: 1.1467rem; left: 1.4667rem; }
+.page-welcome .section-person .nan .yan2{ top: 1.04rem; left: 2.08rem; }
+.page-welcome .section-person .nv{ width: 36%; position: relative; right: 0.7467rem; }
 .page-welcome .section-person .nv .ren{ width: 100%; }
 .page-welcome .section-person .nv .tou{  
     width: 55%;
     position: absolute;
-    top: 2px;
+    top: 0.0533rem;
     left: 37%;
     animation: nv-tou 1.2s linear infinite normal;
     transform-origin: 0 bottom;
@@ -234,14 +189,14 @@ body{
 .page-welcome .section-person .nv .gebo{  
     width: 26%;
     position: absolute;
-    top: 58px;
+    top: 1.5467rem;
     left: 0;
     animation: nv-gebo 1s ease-in-out infinite normal;
     transform-origin: 0 bottom;
 }
 .page-welcome .section-person .nv .yan{  
-    width: 6px;
-    height: 6px;
+    width: 0.16rem;
+    height: 0.16rem;
     background-color: #2c191a;
     border-radius: 100%;
     position: absolute;
@@ -252,31 +207,27 @@ body{
     content: '';
     display: block;
     position: absolute;
-    top: -2px;
+    top: -0.0533rem;
     left: 0;
-    width: 1px;
-    height: 3px;
+    width: 0.0267rem;
+    height: 0.08rem;
     background-color: #2c191a;
     transform: rotate(-35deg);
 }
-.page-welcome .section-person .nv .yan1{ top: 43px; left: 65px; }
-.page-welcome .section-person .nv .yan2{ top: 42px; left: 80px; }
-@keyframes nan-dialog{
-    70%{ transform: scale(1.2); }
-    100%{ transform: scale(1); }
-}
-@keyframes nv-dialog{
+.page-welcome .section-person .nv .yan1{ top: 1.1467rem; left: 1.7333rem; }
+.page-welcome .section-person .nv .yan2{ top: 1.12rem; left: 2.1333rem; }
+@keyframes talk{
     70%{ transform: scale(1.2); }
     100%{ transform: scale(1); }
 }
 @keyframes nan-yan{
     15%{ height: 1px; }
     16%{ height: 4px; }
-    0%{ transform: translate(0px, 0); }
-    25%{ transform: translate(1px, 0); }
-    50%{ transform: translate(0px, 0); }
-    75%{ transform: translate(-1px, 0); }
-    100%{ transform: translate(0px, 0); }
+    0%{ transform: translate(0, 0); }
+    25%{ transform: translate(0.0267rem, 0); }
+    50%{ transform: translate(0, 0); }
+    75%{ transform: translate(-0.0267rem, 0); }
+    100%{ transform: translate(0, 0); }
 }
 @keyframes nan-tou{
     0%{ transform: skew(0) rotate(0); }
@@ -287,9 +238,342 @@ body{
 }
 @keyframes nan-shou{
     0%{ transform: translate(0, 0) skew(0) rotate(0); }
-    25%{ transform: translate(1px, 0) skew(-7deg) rotate(4deg); }
+    25%{ transform: translate(0.0267rem, 0) skew(-7deg) rotate(4deg); }
     50%{ transform: translate(0, 0) skew(0) rotate(0); }
-    75%{ transform: translate(-1px, 0) skew(7deg) rotate(-4deg); }
+    75%{ transform: translate(-0.0267rem, 0) skew(7deg) rotate(-4deg); }
+    100%{ transform: translate(0, 0) skew(0) rotate(0); }
+}
+@keyframes nan-gebo{
+    0%{ transform: skew(0); }
+    25%{ transform: skew(-1.5deg); }
+    50%{ transform: skew(0); }
+    75%{ transform: skew(1.5deg); }
+    100%{ transform: skew(0); }
+}
+@keyframes nv-yan{
+    15%{ height: 0.0267rem;  }
+    16%{ height: 0.16rem; }
+    0%{ transform: translate(0, 0); }
+    25%{ transform: translate(0.0267rem, 0); }
+    50%{ transform: translate(0, 0); }
+    75%{ transform: translate(-0.0267rem, 0); }
+    100%{ transform: translate(0, 0); }
+}
+@keyframes nv-tou{
+    0%{ transform: skew(0) rotate(0); }
+    25%{ transform: skew(-1deg) rotate(1deg); }
+    50%{ transform: skew(0) rotate(0); }
+    75%{ transform: skew(1deg) rotate(-1deg); }
+    100%{ transform: skew(0) rotate(0); }
+}
+@keyframes nv-gebo{
+    0%{ transform: skew(0) translate(0, 0); }
+    25%{ transform: skew(-6deg) rotate(2deg) translate(0, -0.0267rem); }
+    50%{ transform: skew(0) translate(0, 0); }
+    75%{ transform: skew(6deg) rotate(-2deg) translate(0, 0.0267rem); }
+    100%{ transform: skew(0) translate(0, 0); }
+}
+
+
+
+/*选择职场状态页面------------------------------------------------------------------------------*/
+.page-role{ background: #f2f7ff url(../images/bg3.jpg) no-repeat center 0; background-size: 100% auto; }
+.page-role .section-title{ padding: 0.5333rem 0 0; }
+.page-role .section-title img{ width: 62%; margin: auto; }
+.page-role .section-nan{ width: 100%; position: relative; margin-top: -1.0667rem; }
+.page-role .section-nan img{ width: 85%; }
+.page-role .section-nan .link{ 
+    display: block;
+    width: 70%;
+    height: 2.4rem;
+    position: absolute;
+    left: 45%;
+    top: 1.4667rem;
+    transform: translate(-50%, 0);
+}
+.page-role .section-nv{ width: 100%; position: relative; margin-top: -3.4667rem; text-align: right; }
+.page-role .section-nv img{ width: 85%; display: inline-block; }
+.page-role .section-nv .link{ 
+    display: block;
+    width: 60%;
+    height: 3.2rem;
+    position: absolute;
+    left: 50%;
+    top: 3.6rem;
+    transform: translate(-50%, 0);
+}
+
+
+/*回答问题页面------------------------------------------------------------------------------*/
+.page-problem{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%; }
+.page-problem .section-btn{ padding: 0.7467rem 0 0; }
+.page-problem .section-btn img{ width: 1.92rem; margin: auto; }
+
+
+/*答题结果页------------------------------------------------------------------------------*/
+.page-dati-result{ background: #f2f7ff url(../images/bg9.jpg) no-repeat center 0; background-size: 100% 100%; }
+.page-dati-result .section-avatar{ display: flex; align-items: center; padding: 0.5333rem 0 0 0.9333rem; }
+.page-dati-result .section-avatar .avatar{ width: 1.1733rem; height: 1.1733rem; border-radius: 50%; border: solid 0.032rem #d22b3f;
+    background-color: #fff; overflow: hidden; }
+.page-dati-result .section-avatar .avatar img{ width: 100%; }
+.page-dati-result .section-avatar .text{ color: #20378c; padding-left: 0.1867rem; }
+.page-dati-result .section-avatar .text h3{ font-size: 0.5867rem; }
+.page-dati-result .section-avatar .text span{ font-size: 0.32rem; }
+.page-dati-result .section-wupin{ text-align: center; }
+.page-dati-result .section-wupin img{ display: inline-block; width: 5.0667rem; }
+.page-dati-result .section-result-text{ margin: 0.0533rem 0.3733rem 0; background-color: #fff; border-radius: 0.1067rem; }
+.page-dati-result .section-result-text h3{ 
+    width: 6.1333rem;
+    height: 1.12rem;
+    line-height: 1.12rem;
+    margin: auto;
+    text-align: center; 
+    font-size: 0.4533rem;
+    color: #fff;
+    background: url(../images/bg-title1.png) no-repeat center top;
+    background-size: 100% 100%;
+}
+.page-dati-result .section-result-text .content{ 
+    font-size: 0.3733rem; 
+    color: #1f388d; 
+    padding: 0.6933rem 0.5333rem 0.6933rem 0.6133rem; 
+    line-height: 0.48rem; 
+}
+.page-dati-result .section-ewm{ display: flex; padding: 0 0.88rem 0 0.5333rem; }
+.page-dati-result .section-ewm .left{ width: 62%; padding: 0.1067rem 0.48rem 0 0; }
+.page-dati-result .section-ewm .left .btn{             
+    display: block;
+    height: 0.9067rem;
+    line-height: 0.9067rem;
+    text-align: center;
+    background-color: #2f3686;
+    color: #fff;
+    border-radius: 0.8rem;
+    margin: 0.3733rem 0 0 0.32rem;
+    font-size: 0.4267rem;
+}
+.page-dati-result .section-ewm .left .btn:nth-child(2){ background-color: #d22b3f; }
+.page-dati-result .section-ewm .left .btn:nth-child(3){ background-color: #e8f0fb; color: #2f3686; }
+.page-dati-result .section-ewm .left .text{
+    display: flex;
+    height: 3.2533rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, .59);
+    color: #1f388d;
+    line-height: 0.5333rem;
+    font-size: 0.3733rem;
+    font-weight: bold;
+    margin-top: 0.4267rem;
+    border-radius: 0.1067rem;
+}
+.page-dati-result .section-ewm .right{ flex: 1; padding-top: 0.5067rem; }
+.page-dati-result .section-ewm .right img{ width: 100%; }
+.page-dati-result .section-ewm .right span{ 
+    display: block; 
+    padding-top: 0.2133rem; 
+    color: #2f3686; 
+    font-size: 0.24rem; 
+    text-align: center; 
+}
+.dialog{ width: 100%; height: 100%; position: fixed; left: 0; top: 0; }
+.dialog .mask{ width: 100%; height: 100%; position: fixed; left: 0; top: 0; background-color: rgba(0, 0, 0, 0.5); }
+.dialog .content{         
+    width: 70%;
+    position: fixed;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    background-color: #20378c;
+    border-radius: 0.16rem;
+    padding: 1.12rem 0 0.8rem; 
+}
+.dialog .content .bg1{  width: 50%; margin: auto; }
+.dialog .content .text1{ text-align: center; color: #fff; line-height: 0.5867rem; margin-top: 0.5867rem; }
+.dialog .content .btn{
+    display: block;
+    width: 55%;
+    height: 0.9067rem;
+    line-height: 0.9067rem;
+    background-color: #fff;
+    color: #20378c;
+    border-radius: 0.8rem;
+    margin: auto;
+    margin-top: 0.96rem;
+    text-align: center;
+    font-size: 0.4rem;
+    font-weight: bold;
+}
+
+
+/*推荐页面------------------------------------------------------------------------------*/
+.page-recommend{ background: #f2f7ff url(../images/bg11.jpg) no-repeat center 0; background-size: 100% 100%; }
+.page-recommend .article-content{     
+    background-color: #fff; 
+    margin: 0 0.3467rem;
+    padding: 0 0.8rem 0.96rem;
+    border-radius: 0.16rem;
+    position: relative;
+    top: 1.0133rem; 
+}
+.page-recommend .article-content .title{ margin-bottom: -0.48rem; position: relative; }
+.page-recommend .article-content .title .bg{ width: 100%; position: relative; top: -0.5333rem; }
+.page-recommend .article-content .title .icon{ position: absolute; }
+.page-recommend .article-content .title .icon-phone{ 
+    width: 0.5333rem; 
+    left: 1.7333rem; 
+    top: 0.2133rem; 
+    animation: phone 1.8s ease-out infinite normal; 
+}
+.page-recommend .article-content .title .icon-mao{ 
+    width: 1.0667rem; 
+    right: -0.2133rem; 
+    top: -0.8533rem; 
+    animation: mao 1.8s ease-out infinite normal; 
+}
+@keyframes phone{
+    0%{ transform: translate(0, 0); }
+    50%{ transform: translate(0, -0.2667rem); }
+}
+@keyframes mao{
+    0%{ transform: translate(0, 0); }
+    50%{ transform: translate(0, 0.2667rem); }
+}
+.page-recommend .article-content .content{ font-size: 0.32rem; color: #1f388d; line-height: 0.5333rem; }
+.page-recommend .article-content .content p{ padding: 0.24rem 0; }
+.page-recommend .article-content .content b{ font-weight: bold; }
+.page-recommend .article-content .section-ewm{ display: flex; margin-top: -0.16rem; }
+.page-recommend .article-content .section-ewm .left{ width: 58%; padding-right: 0.64rem; }
+.page-recommend .article-content .section-ewm .left .btn{                 
+    display: block;
+    height: 0.9067rem;
+    line-height: 0.9067rem;
+    text-align: center;
+    background-color: #2f3686;
+    color: #fff;
+    border-radius: 0.8rem;
+    margin-top: 0.3733rem;
+    font-size: 0.4267rem; 
+}
+.page-recommend .article-content .section-ewm .left .btn:nth-child(2){ background-color: #d22b3f; }
+.page-recommend .article-content .section-ewm .left .btn:nth-child(3){ background-color: #e8f0fb; color: #2f3686; }
+.page-recommend .article-content .section-ewm .right{ flex: 1; margin-top: -0.16rem; }
+.page-recommend .article-content .section-ewm .right img{ width: 100%; border: solid 0.08rem #d1d7e9; border-radius: 0.0533rem; }
+.page-recommend .article-content .section-ewm .right span{ 
+    display: block; 
+    padding-top: 0.2133rem; 
+    color: #2f3686; 
+    font-size: 0.24rem; 
+    text-align: center;
+}
+.page-recommend .section-person{ 
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    margin: 0 0.3467rem;
+    height: 4.0533rem;
+    overflow: hidden;
+}
+.page-recommend .section-person .nan{ width: 43%; position: relative; }
+.page-recommend .section-person .nan .ren{ width: 100%; position: relative; z-index: 2; }
+.page-recommend .section-person .nan .tou{  
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 21%;
+    animation: nan-tou .8s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nan .shou{  
+    width: 20%;
+    position: absolute;
+    top: 1.3867rem;
+    right: 0;
+    animation: nan-shou .8s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nan .gebo{  
+    width: 22%;
+    position: absolute;
+    top: 1.44rem;
+    right: 0.0rem;
+    animation: nan-gebo .8s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nan .yan{
+    width: 0.1333rem;
+    height: 0.1067rem;
+    background-color: #2c191a;
+    border-radius: 50%;
+    position: absolute;
+    animation: nan-yan .8s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nan .yan1{ top: 0.9333rem; left: 1.2rem; }
+.page-recommend .section-person .nan .yan2{ top: 0.8533rem; left: 1.68rem; }
+.page-recommend .section-person .nv{ width: 29.2%; padding: 0.2667rem 0 0; position: relative; }
+.page-recommend .section-person .nv .ren{ width: 100%; }
+.page-recommend .section-person .nv .tou{  
+    width: 55%;
+    position: absolute;
+    top: 0.32rem;
+    left: 36%;
+    animation: nv-tou 1.2s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nv .gebo{  
+    width: 26%;
+    position: absolute;
+    top: 1.4667rem;
+    left: 0.0267rem;
+    animation: nv-gebo 1.4s ease-in-out infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nv .yan{  
+    width: 0.16rem;
+    height: 0.1333rem;
+    background-color: #2c191a;
+    border-radius: 50%;
+    position: absolute;
+    animation: nv-yan 1.2s linear infinite normal;
+    transform-origin: 0 bottom;
+}
+.page-recommend .section-person .nv .yan:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -0.0533rem;
+    left: 0;
+    width: 0.0267rem;
+    height: 0.08rem;
+    background-color: #2c191a;
+    transform: rotate(-35deg);
+}
+.page-recommend .section-person .nv .yan1{ top: 1.1467rem; left: 1.3867rem; }
+.page-recommend .section-person .nv .yan2{ top: 1.12rem; left: 1.7067rem; }
+@keyframes nan-yan{
+    15%{ height: 0.0267rem; }
+    16%{ height: 0.1067rem; }
+    0%{ transform: translate(0, 0); }
+    25%{ transform: translate(0.0267rem, 0); }
+    50%{ transform: translate(0, 0); }
+    75%{ transform: translate(-0.0267rem, 0); }
+    100%{ transform: translate(0.0rem, 0); }
+}
+@keyframes nan-tou{
+    0%{ transform: skew(0) rotate(0); }
+    25%{ transform: skew(-1deg) rotate(1deg); }
+    50%{ transform: skew(0) rotate(0); }
+    75%{ transform: skew(1deg) rotate(-1deg); }
+    100%{ transform: skew(0) rotate(0); }
+}
+@keyframes nan-shou{
+    0%{ transform: translate(0, 0) skew(0) rotate(0); }
+    25%{ transform: translate(0.0533rem, 0) skew(-4deg) rotate(3deg); }
+    50%{ transform: translate(0, 0) skew(0) rotate(0); }
+    75%{ transform: translate(-0.0267rem, 0) skew(4deg) rotate(-2deg); }
     100%{ transform: translate(0, 0) skew(0) rotate(0); }
 }
 @keyframes nan-gebo{
@@ -301,13 +585,13 @@ body{
 }
 
 @keyframes nv-yan{
-    15%{ height: 1px;  }
-    16%{ height: 6px; }
-    0%{ transform: translate(0px, 0); }
-    25%{ transform: translate(1px, 0); }
-    50%{ transform: translate(0px, 0); }
-    75%{ transform: translate(-1px, 0); }
-    100%{ transform: translate(0px, 0); }
+    15%{ height: 0.0267rem; }
+    16%{ height: 0.1333rem; }
+    0%{ transform: translate(0, 0); }
+    25%{ transform: translate(0.0267rem, 0); }
+    50%{ transform: translate(0, 0); }
+    75%{ transform: translate(-0.0267rem, 0); }
+    100%{ transform: translate(0, 0); }
 }
 @keyframes nv-tou{
     0%{ transform: skew(0) rotate(0); }
@@ -318,41 +602,8 @@ body{
 }
 @keyframes nv-gebo{
     0%{ transform: skew(0) translate(0, 0); }
-    25%{ transform: skew(-6deg) rotate(2deg) translate(0, -1px); }
+    25%{ transform: skew(-6deg) rotate(2deg) translate(0, -0.0267rem); }
     50%{ transform: skew(0) translate(0, 0); }
-    75%{ transform: skew(6deg) rotate(-2deg) translate(0, 1px); }
+    75%{ transform: skew(6deg) rotate(-2deg) translate(0, 0.0267rem); }
     100%{ transform: skew(0) translate(0, 0); }
 }
-
-
-
-/*选择职场状态页面------------------------------------------------------------------------------*/
-.page-role{ background: #f2f7ff url(../images/bg3.jpg) no-repeat center 0; background-size: 100% auto; }
-.page-role .section-nan{ width: 100%; position: relative; margin-top: -40px; }
-.page-role .section-nan img{ width: 85%; }
-.page-role .section-nan .link{ 
-    display: block;
-    width: 70%;
-    height: 90px;
-    position: absolute;
-    left: 45%;
-    top: 55px;
-    transform: translate(-50%, 0);
-}
-.page-role .section-nv{ width: 100%; position: relative; margin-top: -130px; text-align: right; }
-.page-role .section-nv img{ width: 85%; display: inline-block; }
-.page-role .section-nv .link{ 
-    display: block;
-    width: 60%;
-    height: 120px;
-    position: absolute;
-    left: 50%;
-    top: 135px;
-    transform: translate(-50%, 0);
-}
-
-
-/*回答问题------------------------------------------------------------------------------*/
-.page-problem{ background: #f2f7ff url(../images/bg6.jpg) no-repeat center bottom; background-size: 100% 100%; }
-.page-problem .section-btn{ padding: 28px 0 0; }
-.page-problem .section-btn img{ width: 72px; margin: auto; }

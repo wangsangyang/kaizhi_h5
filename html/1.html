@@ -9,13 +9,62 @@
   <link rel="stylesheet" type="text/css" type="" href="css/style.css" />
 </head>
 
-<body>
+<body >
+<!--首页-->
+<article class="page-loading" id="page-loading">
+  	<div class="inner">
+	    	<div class="loading1"><img src="../static/images/loading1.png"></div>
+	    	<div class="loading2"><img src="../static/images/loading2.png"></div>
+	    	<div class="loading3">
+	    			<img class="img1" src="../static/images/loading3.png">
+	    			<img class="img2" src="../static/images/loading6.gif">
+    		</div>
+		</div>
+</article>
+<style type="text/css">
+	.page-loading{
+		width: 100%;
+		height: 100%;
+		background-color: #f2f6ff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		text-align: center;
+		display: flex; 
+		align-items: center; 
+		justify-content: center; 
+	}
+	.page-loading img{ display: inline-block; }
+	.page-loading .loading1 img{ 
+		width: 1.7067rem; 
+		transform: translate(0, 0);
+      animation: loading1 10s linear infinite normal;
+      -webkit-animation: loading1 1.5s ease-in-out infinite normal;
+	}
+  @keyframes loading1{
+      50%{ transform: translate(0, 0.32rem); }
+      100%{ transform: translate(0, 0); }
+  }
+  @-webkit-keyframes loading1{
+      50%{ -webkit-transform: translate(0, 0.32rem); }
+      100%{ -webkit-transform: translate(0, 0); }
+  }
+	.page-loading .loading2{ padding-top: 0.32rem; }
+	.page-loading .loading2 img{ width: 2.6667rem; }
+	.page-loading .loading3{ display: flex; align-items: center; justify-content: center; }
+	.page-loading .loading3 .img1{ width: 2.16rem; }
+	.page-loading .loading3 .img2{ height: 0.1333rem; margin-left: 0.1333rem; }
+</style>
+
+<div id="app">
+
 	<!--首页-->
 	<article class="page page-index">
 	    <section class="section-logo">
 	        <img src="images/logo.png">
 	    </section>
-	    <section class="section-btn-wave" @click="link">
+	    <section class="section-btn-wave" @click="linkWelcome">
 	        <div class="bg1"></div>
 	        <div class="bg2"></div>
 	        <div class="bg3"></div>
@@ -28,15 +77,15 @@
 	    <section class="section-logo">
 	        <img src="images/logo.png">
 	    </section>
-	    <section class="section-btn" @click="link">
+	    <section class="section-btn-wave" @click="linkRole">
 	        <div class="bg1"></div>
 	        <div class="bg2"></div>
 	        <div class="bg3"></div>
 	        <img src="images/btn2.png">
 	    </section>
 	    <section class="section-person">
-	        <img class="dialog dialog1" src="images/dialog-1.png">
-	        <img class="dialog dialog2" src="images/dialog-2.png">
+	        <img class="talk talk1" src="images/dialog-1.png">
+	        <img class="talk talk2" src="images/dialog-2.png">
 	        <div class="inner">
 	            <div class="nan">
 	                <img class="ren" src="images/nan1.png">
@@ -67,17 +116,16 @@
 	    </section>
 	    <section class="section-nan">
 	        <img src="images/bg4.png">
-	        <a class="link" @click="link"></a>
+	        <a class="link" @click="linkProblem"></a>
 	    </section>
 	    <section class="section-nv">
 	        <img src="images/bg5.png">
-	        <a class="link" @click="link"></a>
+	        <a class="link" @click="linkProblem"></a>
 	    </section>
 	</article>
 
 
-
-	<!--回答问题-->
+	<!--回答问题页-->
 	<article class="page page-problem" id="page-problem">
 	    <section class="section-logo">
 	        <img src="images/logo.png">
@@ -87,18 +135,119 @@
 	        <div class="problem-answer" :class="item.active?'active':''" @click="onSelectAnswer(item.letter, index)" v-for="(item, index) in init_answers" :key="item.letter"><i class="icon" :class="item.letter"></i>{{item.text}}</div>
 	    </section>
 	    <section class="section-btn">
-	        <img src="images/btn3.png" @click="linkNext">
+	        <img src="images/btn3.png" @click="linkDati">
 	    </section>
 	</article>
 
+
+	<!--答题结果页-->
+	<article class="page page-dati-result" id="page-dati-result">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <section class="section-avatar" @click="linkRecommend">
+	        <div class="avatar"><img src=""></div>
+	        <div class="text">
+	            <h3>邝邝*Mia</h3>
+	            <span>职场超能力是 </span>
+	        </div>
+	    </section>
+	    <section class="section-wupin">
+	        <!--<img src="images/wupin1.png" style="margin-top: 8px;">-->
+	        <!--<img src="images/wupin2.png" style="margin: 16px 0 20px;">-->
+	        <!--<img src="images/wupin3.png" style="width:62%;margin: -14px 0 2px;">-->
+	        <img src="images/wupin4.png" style="width:54%;margin: 15px 0 2px;">
+	    </section>
+	    <section class="section-result-text">
+	        <h3>自信与果敢</h3>
+	        <div class="content"><p>你仿佛是个天生的leader，所有人都会自愿追随你，被你的魅力所折服。</p></div>
+	    </section>
+	    <section class="section-ewm">
+	        <div class="left">
+	        		<span v-if="jiesuo">
+			            <a class="btn" @click="linkBackTest">返回测试</a>
+			            <a class="btn" @click="onJiesuo">解锁超能力</a>
+			            <a class="btn" @click="onShowShareDialog">分享给好友</a>
+	            </span>
+	            <span class="text" v-else>长按识别二维码<br>开启超能力测试 </span>
+	        </div>
+	        <div class="right">
+	            <img src="images/ewm.jpg">
+	            <span>长按识别二维码，开启测试</span>
+	        </div>
+	    </section>
+      <section class="dialog" v-show="showDialog">
+		      <i class="mask"></i>
+		      <div class="content">
+		          <img class="bg1" src="images/bg10.png">
+		          <div class="text1">点击右上角“...”,<br>将测试结果分享给好友们，<br>一起探索职场超能力吧！</div>
+		          <a class="btn" @click="onCloseShareDialog">关闭</a>
+		      </div>
+		  </section>
+	</article>
+
+
+	<!--推荐页-->
+	<article class="page page-recommend">
+	    <section class="section-logo">
+	        <img src="images/logo.png">
+	    </section>
+	    <article class="article-content">
+	        <h3 class="title">
+	            <img class="bg" src="images/bg-title2.png">
+            	<!-- <img class="bg" src="images/bg-title3.png"> -->
+	            <img class="icon icon-phone" src="images/bg-phone.png">
+	            <img class="icon icon-mao" src="images/bg-mao.png">
+	        </h3>
+	        <div class="content">
+	            <p>也许你是个初出茅庐的新人，对一切都充满未知，但是这也说明希望才刚刚开始。</p>
+	            <p>当你对未来还充满茫然的时候，不如再给自己人生加点分：法国凯致商学院<b>本科项目</b>六年蝉联全法第一，<b>国际本科(IBBA)项目</b>稳居全法第二，国际化顶尖师资力量，多元化的文化氛围，培养你的国际视野。</p>
+	            <p>还有<b>管理类12个硕士项目</b>结合兴趣助你继续深造，早日实现梦想。</p>
+	        </div>
+					<!--           
+					<div class="content">
+            	<p>即使拥有非凡的职业成就，你仍旧保持开放、好奇的心态，当你仰望最高峰，一段MBA之旅会为你披荆斩棘，助你勇往直前。</p>
+            	<p>法国凯致商学院与上海交通大学合作的<b>国际在职MBA(Global-MBA)项目</b>旨在培养国际化的精英领袖；<b>欧亚工商管理博士(EA-DBA)项目</b>更是聚集三校教授，为全球企业领导者提供一个优秀和创意澎湃的学术氛围，以及一对一的悉心指导，是通往精英圈层的捷径。</p>
+        	</div> -->
+	        <section class="section-ewm">
+	            <div class="left">
+	                <a class="btn" @click="linkXiaokai">问问小凯</a>
+	                <a class="btn" @click="linkMore">了解更多</a>
+	            </div>
+	            <div class="right">
+	                <img src="images/ewm.jpg">
+	                <span>长按识别二维码，开启测试</span>
+	            </div>
+	        </section>
+	    </article>
+	    <section class="section-person">
+	        <div class="nan">
+	            <img class="ren" src="images/nan1.png">
+	            <img class="tou" src="images/nan-tou-1.png">
+	            <i class="yan yan1"></i>
+	            <i class="yan yan2"></i>
+	            <img class="shou" src="images/nan-shou-1.png">
+	            <img class="gebo" src="images/nan-gebo-1.png">
+	        </div>
+	        <div class="nv">
+	            <img class="ren" src="images/nv1.png">
+	            <img class="tou" src="images/nv-tou-1.png">
+	            <i class="yan yan1"></i>
+	            <i class="yan yan2"></i>
+	            <img class="gebo" src="images/nv-gebo-1.png">
+	        </div>
+	    </section>
+	</article>
+
+</div>
+
+
   <script type="text/javascript" src="js/vue.js"></script>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
   <script>
-      var page = new Vue({
-          el: '#page-problem',
+      var app = new Vue({
+          el: '#app',
           data: {
-	            index: 0,
-	            init_title: '',
-	            init_answers: '', 
 	            titles: ['1.你对待朋友总是？', '2.你喜欢的工作方式是？', '3.对于工作的节奏，你觉得哪个和你很合拍？', '4.你会怎么表达自己的想法？', '5.团队合作时，你扮演什么角色？'],
 	            answers: [
 	                {
@@ -124,7 +273,6 @@
 	                            id: 'D'}
 	                    ]
 	                },
-
 	                {
 	                    list: [{
 	                            text: '乐意面对挑战和变革，并敢于下决心掌握',
@@ -149,7 +297,6 @@
 	                        }
 	                    ]
 	                },
-
 	                {
 	                    list: [{
 	                            text: '设立雄伟目标不断工作，不达目标，誓不罢休',
@@ -174,7 +321,6 @@
 	                        }
 	                    ]
 	                },
-
 	                {
 	                    list: [{
 	                            text: '直言不讳地坦率表达自己的看法',
@@ -199,7 +345,6 @@
 	                        }
 	                    ]
 	                },
-
 	                {
 	                    list: [{
 	                            text: '天生的带领者，自信坚决果敢。不怕冒险，无所畏惧',
@@ -225,19 +370,44 @@
 	                    ]
 	                },
 	            ],
+	            init_title: '',
+	            init_answers: '', 
+	            index: 0,
+	            last_answers: [],//最终选择的5道题答案
 
-	            last_answers: []
-        
+	            //答题结果页
+	            showDialog: false,
+	            jiesuo: true,
           },
 			    created(){
+			    		//初始化题目
 			        this.init_title = this.titles[0];
 			        this.init_answers = this.answers[0].list;
 			    },
+			    mounted(){
+			    		$('#page-loading').remove();
+      				$('.page').removeClass('show');
+      				$('.page-index').addClass('show');
+			    },
           methods: {
+          		linkWelcome(){
+          				$('.page').removeClass('show');
+          				$('.page-welcome').addClass('show');
+          		},
+          		linkRole(){
+          				$('.page').removeClass('show');
+          				$('.page-role').addClass('show');
+          		},
+          		linkProblem(){
+          				$('.page').removeClass('show');
+          				$('.page-problem').addClass('show');
+          		},
+          		//选择题目
     	        onSelectAnswer(letter, index){
 			            this.init_answers[index].active = !this.init_answers[index].active;
 			        },
-			        linkNext(){
+			        //答题
+			        linkDati(){
 			            let answers = this.init_answers.filter((v, k)=>{
 			                if(v.active){
 			                    return v.active;
@@ -248,24 +418,64 @@
 			                alert('请选择');
 			                return;
 			            }
-
 			            answers = answers.map((v, k)=>{
 			                return v.letter;
 			            });
 			            //console.log(answers);
-	                this.index = this.index + 1;
-			            if(this.index<5){
-                			this.last_answers.push(answers);
-			                console.log(this.last_answers);
+			            this.last_answers.push(answers);
+			            console.log(this.last_answers);
+
+			            if(this.index>=4){
+			                alert('最终答案：'+ this.last_answers.join('/') );
+		          				$('.page').removeClass('show');
+		          				$('.page-dati-result').addClass('show');
+							    		//让题目恢复初始化状态
+							        this.init_title = this.titles[0];
+							        this.init_answers = this.answers[0].list;
+							    		this.index = 0;
+							    		this.last_answers = [];
+							    		this.answers.map((v, k)=>{
+					                v.list.map((v2, k2)=>{
+							                v2.active = false;
+							            });
+					            });
+		          				return;
+			            }
+			            this.index = this.index + 1;
+			            if(this.titles[this.index]) {
 			                this.init_title = this.titles[this.index];
 			                this.init_answers = this.answers[this.index].list;
-			            }else{
-                			alert('结束了');
-			               //this.$router.push({name: 'problem2', params: {answer1: answers.join(',') } }); 
 			            }
 			        },
+
+    	        linkBackTest(){
+          				$('.page').removeClass('show');
+          				$('.page-index').addClass('show');
+			        },
+			        //解锁超能力
+			        onJiesuo(){
+			            this.jiesuo = false;
+			        },
+			        //弹窗
+			        onShowShareDialog(){
+			            this.showDialog = true;
+			        },
+			        //关闭弹窗
+			        onCloseShareDialog(){
+			            this.showDialog = false;
+			        },
+			        //问问小凯
+			        linkXiaokai(){
+			        },
+			        //了解更多
+			        linkMore(){
+			        },
+			        linkRecommend(){
+          				$('.page').removeClass('show');
+          				$('.page-recommend').addClass('show');
+			        }
           },
-      })
+      });
   </script>
 </body>
 </html>
