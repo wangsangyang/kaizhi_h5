@@ -42,13 +42,13 @@ const router = new Router({
       path: '/welcome',
       name: 'welcome',
       component: welcome,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/role',
       name: 'selectRole',
       component: selectRole,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/problem/1',
@@ -60,49 +60,49 @@ const router = new Router({
       path: '/problem/2',
       name: 'problem2',
       component: problem2,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/problem/3',
       name: 'problem3',
       component: problem3,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/problem/4',
       name: 'problem4',
       component: problem4,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/problem/5',
       name: 'problem5',
       component: problem5,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/result',
       name: 'answerResult',
       component: answerResult,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/share',
       name: 'share',
       component: share,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/recommend/1',
       name: 'recommend1',
       component: recommend1,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
     {
       path: '/recommend/2',
       name: 'recommend2',
       component: recommend2,
-      meta: { needLogin: false, keepAlive: true, title: '' }
+      meta: { needLogin: false, keepAlive: false, title: '' }
     },
 
   ],
