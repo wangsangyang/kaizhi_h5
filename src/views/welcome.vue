@@ -305,7 +305,7 @@ export default {
     name: 'welcome',
     created(){
         console.log(location.origin);
-        this.share();
+        //this.share();
     },
     methods: {
         link(){

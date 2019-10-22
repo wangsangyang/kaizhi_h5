@@ -403,18 +403,22 @@
 	            //答题结果页
 	            showDialog: false,
 	            jiesuo: true,
-          },
-			    created(){
-			    		//初始化题目
-			        this.init_title = this.titles[0];
-			        this.init_answers = this.answers[0].list;
-			    },
-			    mounted(){
-			    		$('#page-loading').remove();
-      				$('.page').removeClass('show');
-      				$('.page-index').addClass('show');
-			    },
-          methods: {
+          	},
+		    created(){
+		    		//初始化题目
+		        this.init_title = this.titles[0];
+		        this.init_answers = this.answers[0].list;
+		    },
+		    mounted(){
+	    		$('#page-loading').remove();
+	    		window.onload = function () {
+	    			setTimeout(()=>{
+						$('.page').removeClass('show');
+						$('.page-index').addClass('show');
+	    			}, 500);
+	    		}
+		    },
+          	methods: {
           		linkWelcome(){
           				$('.page').removeClass('show');
           				$('.page-welcome').addClass('show');
