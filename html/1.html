@@ -385,9 +385,11 @@
 			        this.init_answers = this.answers[0].list;
 			    },
 			    mounted(){
-			    		$('#page-loading').remove();
-      				$('.page').removeClass('show');
-      				$('.page-index').addClass('show');
+			    		window.onload = function () {
+					    		$('#page-loading').remove();
+		      				$('.page').removeClass('show');
+		      				$('.page-index').addClass('show');
+			    		}
 			    },
           methods: {
           		linkWelcome(){
